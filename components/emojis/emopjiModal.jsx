@@ -55,7 +55,7 @@ const EmojiModal = ({closeModal,item}) => {
         <input type="number" min="1" max="200" value={myFontSize} onInput={(e)=>handleInput(e)}/>
         <button className='emoji-button-minus'onClick={()=>setMyFontSize((prev)=>prev<=1? prev:prev-1)}>-</button>
        </FlexRow>
-        
+       <EmojiModalAttribute text={item.name} name={"Name"}/>
        <EmojiModalAttribute text={item.shortname} name={"Shortname"}/>
        <EmojiModalAttribute text={item.unicode} name={"Unicode"}/>
        <EmojiModalAttribute text={item.html} name={"Decimal"}/>

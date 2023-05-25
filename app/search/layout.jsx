@@ -8,7 +8,7 @@ export const metadata = {
 
 const SearchLayout = ({children}) => {
   return (
-    <div>{children}</div>
+    <div className='layout-div'>{children}</div>
   )
 }
 export default SearchLayout

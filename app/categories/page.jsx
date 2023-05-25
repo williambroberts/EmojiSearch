@@ -5,6 +5,8 @@ import { v4 as uuidv4 } from 'uuid';
 const noto = Noto_Color_Emoji({subsets:["emoji"],weight:["400"]})
 import categories  from "../../lib/categories.json"
 import CategoriesItem from '@/components/categories/categoriesItem'
+import FlexRow from '@/components/setup/flexRow';
+import Title from '@/components/setup/title';
 const CaterogiesPage = () => {
     const [searchInput,setSearchInput]=useState()
 
@@ -13,7 +15,9 @@ const CaterogiesPage = () => {
    <main id="categories-main">
     {/* search bar */}
     {/* order by ?? */}
-   <input className='category-search-input' placeholder='Search Categories'
+  
+    <Title text={"Categories"}/>
+   <input className='search-input' placeholder='Search Categories'
     type="text" value={searchInput} name="categories-search" onChange={(e)=>setSearchInput(e.target.value.toLowerCase())}/>
     <div className='categories-container'>
       {searchInput===undefined? categories.map((item,index)=>( 

@@ -8,15 +8,15 @@ import { usePathname } from 'next/navigation';
 import EmojiItem from '@/components/emojis/emojiItem'
 import { v4 as uuidv4 } from 'uuid';
 import BackButton from '@/components/setup/buttons/backButton'
-
+import Title from '@/components/setup/title'
 const IndividualcategoryPage = ({params: {category}}) => {
-  const pathname = usePathname();
+  const pathname = usePathname()
   return (
     <main>
-     <h3 className="individual-category-title" >{categories[category].category}</h3> 
-      {/* category name */}
+    <Title text={categories[category].category}/> 
+     
       <BackButton/>
-      {/* back */}
+     
       <div className='category-grid'>
       {emojis.filter((item,index)=> item.category===categories[category].category).map((item,index)=> (<EmojiItem key={uuidv4()} item={item} index={index} pathname={pathname}/> ) )}
       </div>

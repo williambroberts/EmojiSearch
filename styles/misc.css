@@ -26,3 +26,10 @@
     gap: 0rem;
     position: relative;
 }
+
+.title {
+    font-size: var(--font-size-24);
+    color: var(--t-1);
+    font-weight: 600;
+    white-space: normal;
+}

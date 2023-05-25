@@ -13,6 +13,11 @@
     gap: 0.125rem;
 
 }
+.search-input {
+    border-radius: 100px;
+    outline: 0;
+    max-width:600px;
+}
 .emoji-modal-attritute {
     display: flex;
     gap: 0.125rem;
@@ -21,11 +26,18 @@
     color: var(--t-1);
 }
 
-.category-grid {
+.category-grid, .search-results {
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
     grid-template-rows: auto;
     gap:0.25rem;
+    width: 100%;
+}
+
+.search-results > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .emoji-item {
     background-color: var(--bg-1);
@@ -36,6 +48,7 @@
     flex-direction: column;
     border: 1px solid var(--bg-4);
     position: relative;
+    width: 100%;
 }
 .emoji-item-copy {
     display: flex;
