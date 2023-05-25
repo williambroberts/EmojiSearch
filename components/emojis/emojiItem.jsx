@@ -18,11 +18,11 @@ const EmojiItem = ({item,pathname,index}) => {
     },2000)
   }
   const OpenModal = ()=>{
-    let myDialog = document.querySelector(`.emoji-modal${index}`)
+    let myDialog = document.querySelector(`#emoji-modal${index}`)
     myDialog.showModal()
   }
   const closeModal = (e)=>{
-    let myDialog = document.querySelector(`.emoji-modal${index}`)
+    let myDialog = document.querySelector(`#emoji-modal${index}`)
     console.log(e.target,document.querySelector(".emoji-modal"),myDialog)
     if (e.target!==myDialog){
       return 
@@ -43,7 +43,8 @@ const EmojiItem = ({item,pathname,index}) => {
       {/* <span><Link href={`${pathname}/${item.shortname}`}>View</Link></span> */}
       <span className='emoji-item-open' onClick={()=>OpenModal()}>view</span>
 
-     <dialog className={`emoji-modal${index}`} onClick={(e)=>closeModal(e)}>
+     <dialog id={`emoji-modal${index}`} className="emoji-dialog"
+     onClick={(e)=>closeModal(e)}>
       <EmojiModal closeModal={closeModal} item={item}/>
      </dialog>
 

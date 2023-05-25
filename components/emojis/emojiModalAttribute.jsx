@@ -4,7 +4,7 @@ const EmojiModalAttribute = ({text,name}) => {
   return (
     <span className='emoji-modal-attritute'>
         <strong>{name}</strong>
-        :{text}
+         :{text}
     </span>
   )
 }
