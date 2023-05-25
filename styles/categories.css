@@ -49,20 +49,37 @@
     white-space: pre-wrap;
     flex-wrap: nowrap;
 }
+.emoji-item-emoji {
+    font-size: var(--font-size-48);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
+}
 
 .emoji-item-open {
     cursor: pointer;
+    padding: 8px 12px;
+    border: 1px solid transparent;
+    box-sizing: border-box;
+    font-size: var(--font-size-14);
+    color: var(--t-1);
+    font-weight: 500;
 }
 .emoji-modal {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-flex-direction: column;  
-
-
+ flex-direction: column;  
 }
-
+.emoji-modal > div:first-child {
+    width: 400px;
+    height: 270px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .emoji-dialog {
     position: fixed;
     top: 50%;
@@ -70,5 +87,57 @@ flex-direction: column;
     transform: translate(-50%, -50%);
     max-height: 500px;
     width: min-content;
+    cursor: pointer;
+    padding: 1rem;
    
+}
+
+.emoji-modal-copy {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.125rem;
+    font-size:var(--font-size-16);
+    color: var(--t-1);
+    padding: 4px 8px;
+    box-sizing: border-box;
+    width: 150px;
+}
+
+.emoji-modal-swap {
+    display: flex;
+    align-items: center;
+    padding: 4px 8px;
+    font-size: var(--font-size-16);
+    font-weight: 500;
+    color: var(--t-1);
+}
+
+.emoji-button-plus {
+    display: flex;
+    align-items: center;
+    padding: 4px 8px;
+    font-size: var(--font-size-16);
+    font-weight: 500;
+    color: var(--t-1);
+}
+.emoji-button-minus {
+    display: flex;
+    align-items: center;
+    padding: 4px 8px;
+    font-size: var(--font-size-16);
+    font-weight: 500;
+    color: var(--t-1);
+}
+.emoji-modal-getcode {
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    gap: 0.125rem;
+    font-size:var(--font-size-16);
+    color: var(--t-1);
+    padding: 4px 8px;
+    box-sizing: border-box;
+    width: 100%;
+    
 }

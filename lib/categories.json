@@ -1,398 +1,497 @@
 [
     {
         "hex": "&#128105;&zwj;&#128105;&zwj;&#128103;&zwj;&#128103;",
-        "category": "People & Body (family)"
+        "category": "People & Body (family)",
+        "emoji": "👩‍👩‍👧‍👧"
     },
     {
         "hex": "&#128514;",
-        "category": "Smileys & Emotion (face-smiling)"
+        "category": "Smileys & Emotion (face-smiling)",
+        "emoji": "😂"
     },
     {
         "hex": "&#10084;",
-        "category": "Smileys & Emotion (emotion)"
+        "category": "Smileys & Emotion (emotion)",
+        "emoji": "❤️"
     },
     {
-        "hex": "&#9971;️",
-        "category": "Activities (game)"
+        "hex": "&#127922;",
+        "category": "Activities (game)",
+        "emoji": "🎲"
     },
     {
         "hex": "&#128525;",
-        "category": "Smileys & Emotion (face-affection)"
+        "category": "Smileys & Emotion (face-affection)",
+        "emoji": "😍"
     },
     {
         "hex": "&#128557;",
-        "category": "Smileys & Emotion (face-concerned)"
+        "category": "Smileys & Emotion (face-concerned)",
+        "emoji": "😭"
     },
     {
         "hex": "&#128530;",
-        "category": "Smileys & Emotion (face-neutral-skeptical)"
+        "category": "Smileys & Emotion (face-neutral-skeptical)",
+        "emoji": "😒"
     },
     {
         "hex": "&#128076;&#127999;",
-        "category": "People & Body (hand-fingers-partial)"
+        "category": "People & Body (hand-fingers-partial)",
+        "emoji": "👌🏿"
     },
     {
         "hex": "&#128532;",
-        "category": "Smileys & Emotion (face-sleepy)"
+        "category": "Smileys & Emotion (face-sleepy)",
+        "emoji": "😔"
     },
     {
         "hex": "&#9851;",
-        "category": "Symbols (other-symbol)"
+        "category": "Symbols (other-symbol)",
+        "emoji": "♻"
     },
     {
         "hex": "&#128077;&#127999;",
-        "category": "People & Body (hand-fingers-closed)"
+        "category": "People & Body (hand-fingers-closed)",
+        "emoji": "👍🏿"
     },
     {
         "hex": "&#128591;&#127999;",
-        "category": "People & Body (hands)"
+        "category": "People & Body (hands)",
+        "emoji": "🙏🏿"
     },
     {
         "hex": "&#127926;",
-        "category": "Objects (music)"
+        "category": "Objects (music)",
+        "emoji": "🎶"
     },
     {
         "hex": "&#128584;",
-        "category": "Smileys & Emotion (monkey-face)"
+        "category": "Smileys & Emotion (monkey-face)",
+        "emoji": "🙈"
     },
     {
         "hex": "&#128526;",
-        "category": "Smileys & Emotion (face-glasses)"
+        "category": "Smileys & Emotion (face-glasses)",
+        "emoji": "😎"
     },
     {
         "hex": "&#128064;",
-        "category": "People & Body (body-parts)"
+        "category": "People & Body (body-parts)",
+        "emoji": "👀"
     },
     {
         "hex": "&#10024;",
-        "category": "Activities (event)"
+        "category": "Activities (event)",
+        "emoji": "✨"
     },
     {
         "hex": "&#128129;&#127999;&zwj;&#9794;",
-        "category": "People & Body (person-gesture)"
+        "category": "People & Body (person-gesture)",
+        "emoji": "💁🏿‍♂"
     },
     {
         "hex": "&#128540;",
-        "category": "Smileys & Emotion (face-tongue)"
+        "category": "Smileys & Emotion (face-tongue)",
+        "emoji": "😜"
     },
     {
         "hex": "&#11013;",
-        "category": "Symbols (arrow)"
+        "category": "Symbols (arrow)",
+        "emoji": "⬅️"
     },
     {
         "hex": "&#9995;&#127999;",
-        "category": "People & Body (hand-fingers-open)"
+        "category": "People & Body (hand-fingers-open)",
+        "emoji": "✋🏿"
     },
     {
         "hex": "&#128073;&#127999;",
-        "category": "People & Body (hand-single-finger)"
+        "category": "People & Body (hand-single-finger)",
+        "emoji": "👉🏿"
     },
     {
         "hex": "&#127800;",
-        "category": "Animals & Nature (plant-flower)"
+        "category": "Animals & Nature (plant-flower)",
+        "emoji": "🌸"
     },
     {
         "hex": "&#128293;",
-        "category": "Travel & Places (sky & weather)"
+        "category": "Travel & Places (sky & weather)",
+        "emoji": "🔥"
     },
     {
         "hex": "&#128545;",
-        "category": "Smileys & Emotion (face-negative)"
+        "category": "Smileys & Emotion (face-negative)",
+        "emoji": "😡"
     },
     {
         "hex": "&#128247;",
-        "category": "Objects (light & video)"
+        "category": "Objects (light & video)",
+        "emoji": "📷"
     },
     {
         "hex": "&#128571;",
-        "category": "Smileys & Emotion (cat-face)"
+        "category": "Smileys & Emotion (cat-face)",
+        "emoji": "😻"
     },
     {
         "hex": "&#128567;",
-        "category": "Smileys & Emotion (face-unwell)"
+        "category": "Smileys & Emotion (face-unwell)",
+        "emoji": "😷"
     },
     {
         "hex": "&#9654;",
-        "category": "Symbols (av-symbol)"
+        "category": "Symbols (av-symbol)",
+        "emoji": "▶️"
     },
     {
         "hex": "&#128081;",
-        "category": "Objects (clothing)"
+        "category": "Objects (clothing)",
+        "emoji": "👑"
     },
     {
         "hex": "&#128299;",
-        "category": "Objects (tool)"
+        "category": "Objects (tool)",
+        "emoji": "🔫"
     },
     {
         "hex": "&#128131;&#127999;",
-        "category": "People & Body (person-activity)"
+        "category": "People & Body (person-activity)",
+        "emoji": "💃🏿"
     },
     {
         "hex": "&#128308;",
-        "category": "Symbols (geometric)"
+        "category": "Symbols (geometric)",
+        "emoji": "🔴"
     },
     {
         "hex": "&#128169;",
-        "category": "Smileys & Emotion (face-costume)"
+        "category": "Smileys & Emotion (face-costume)",
+        "emoji": "💩"
     },
     {
         "hex": "&#127829;",
-        "category": "Food & Drink (food-prepared)"
+        "category": "Food & Drink (food-prepared)",
+        "emoji": "🍕"
     },
     {
         "hex": "&#127811;",
-        "category": "Animals & Nature (plant-other)"
+        "category": "Animals & Nature (plant-other)",
+        "emoji": "🍃"
     },
     {
         "hex": "&#128039;",
-        "category": "Animals & Nature (animal-bird)"
+        "category": "Animals & Nature (animal-bird)",
+        "emoji": "🐧"
     },
     {
         "hex": "&#9992;",
-        "category": "Travel & Places (transport-air)"
+        "category": "Travel & Places (transport-air)",
+        "emoji": "✈️"
     },
     {
         "hex": "&#128286;",
-        "category": "Symbols (warning)"
+        "category": "Symbols (warning)",
+        "emoji": "🔞"
     },
     {
         "hex": "&#128133;&#127999;",
-        "category": "People & Body (hand-prop)"
+        "category": "People & Body (hand-prop)",
+        "emoji": "💅🏿"
     },
     {
         "hex": "&#9917;",
-        "category": "Activities (sport)"
+        "category": "Activities (sport)",
+        "emoji": "⚽"
     },
     {
         "hex": "&#128124;&#127999;",
-        "category": "People & Body (person-fantasy)"
+        "category": "People & Body (person-fantasy)",
+        "emoji": "👼🏿"
     },
     {
         "hex": "&#127867;",
-        "category": "Food & Drink (drink)"
+        "category": "Food & Drink (drink)",
+        "emoji": "🍻"
     },
     {
         "hex": "&#127757;",
-        "category": "Travel & Places (place-map)"
+        "category": "Travel & Places (place-map)",
+        "emoji": "🌍"
     },
     {
         "hex": "&#9875;",
-        "category": "Travel & Places (transport-water)"
+        "category": "Travel & Places (transport-water)",
+        "emoji": "⚓"
     },
     {
         "hex": "&#128054;",
-        "category": "Animals & Nature (animal-mammal)"
+        "category": "Animals & Nature (animal-mammal)",
+        "emoji": "🐶"
     },
     {
         "hex": "&#128176;",
-        "category": "Objects (money)"
+        "category": "Objects (money)",
+        "emoji": "💰"
     },
     {
         "hex": "&#127874;",
-        "category": "Food & Drink (food-sweet)"
+        "category": "Food & Drink (food-sweet)",
+        "emoji": "🎂"
     },
     {
         "hex": "&#9832;",
-        "category": "Travel & Places (place-other)"
+        "category": "Travel & Places (place-other)",
+        "emoji": "♨️"
     },
     {
         "hex": "&#9742;",
-        "category": "Objects (phone)"
+        "category": "Objects (phone)",
+        "emoji": "☎️"
     },
     {
         "hex": "&#128120;&#127999;",
-        "category": "People & Body (person-role)"
+        "category": "People & Body (person-role)",
+        "emoji": "👸🏿"
     },
     {
         "hex": "&#127942;",
-        "category": "Activities (award-medal)"
+        "category": "Activities (award-medal)",
+        "emoji": "🏆"
     },
     {
         "hex": "&#127482;",
-        "category": "Flags (country-flag)"
+        "category": "Flags (country-flag)",
+        "emoji": "🇺🇸"
     },
     {
         "hex": "&#128298;",
-        "category": "Food & Drink (dishware)"
+        "category": "Food & Drink (dishware)",
+        "emoji": "🔪"
     },
     {
         "hex": "&#127383;",
-        "category": "Symbols (alphanum)"
+        "category": "Symbols (alphanum)",
+        "emoji": "🆗"
     },
     {
         "hex": "&#128029;",
-        "category": "Animals & Nature (animal-bug)"
+        "category": "Animals & Nature (animal-bug)",
+        "emoji": "🐝"
     },
     {
         "hex": "&#127928;",
-        "category": "Objects (musical-instrument)"
+        "category": "Objects (musical-instrument)",
+        "emoji": "🎸"
     },
     {
         "hex": "&#127827;",
-        "category": "Food & Drink (food-fruit)"
+        "category": "Food & Drink (food-fruit)",
+        "emoji": "🍓"
     },
     {
         "hex": "&#127814;",
-        "category": "Food & Drink (food-vegetable)"
+        "category": "Food & Drink (food-vegetable)",
+        "emoji": "🍆"
     },
     {
         "hex": "&#128118;&#127999;",
-        "category": "People & Body (person)"
+        "category": "People & Body (person)",
+        "emoji": "👶🏿"
     },
     {
         "hex": "&#128099;",
-        "category": "People & Body (person-symbol)"
+        "category": "People & Body (person-symbol)",
+        "emoji": "👣"
     },
     {
         "hex": "&#128684;",
-        "category": "Objects (other-object)"
+        "category": "Objects (other-object)",
+        "emoji": "🚬"
     },
     {
         "hex": "&#128013;",
-        "category": "Animals & Nature (animal-reptile)"
+        "category": "Animals & Nature (animal-reptile)",
+        "emoji": "🐍"
     },
     {
         "hex": "&#128056;",
-        "category": "Animals & Nature (animal-amphibian)"
+        "category": "Animals & Nature (animal-amphibian)",
+        "emoji": "🐸"
     },
     {
         "hex": "&#128680;",
-        "category": "Travel & Places (transport-ground)"
+        "category": "Travel & Places (transport-ground)",
+        "emoji": "🚨"
     },
     {
         "hex": "&#128213;",
-        "category": "Objects (book-paper)"
+        "category": "Objects (book-paper)",
+        "emoji": "📕"
     },
     {
         "hex": "&#128137;",
-        "category": "Objects (medical)"
+        "category": "Objects (medical)",
+        "emoji": "💉"
     },
     {
         "hex": "&#128686;",
-        "category": "Symbols (transport-sign)"
+        "category": "Symbols (transport-sign)",
+        "emoji": "🚮"
     },
     {
         "hex": "&#128025;",
-        "category": "Animals & Nature (animal-marine)"
+        "category": "Animals & Nature (animal-marine)",
+        "emoji": "🐙"
     },
     {
         "hex": "&#128191;",
-        "category": "Objects (computer)"
+        "category": "Objects (computer)",
+        "emoji": "💿"
     },
     {
         "hex": "&#128221;",
-        "category": "Objects (writing)"
+        "category": "Objects (writing)",
+        "emoji": "📝"
     },
     {
         "hex": "&#128266;",
-        "category": "Objects (sound)"
+        "category": "Objects (sound)",
+        "emoji": "🔊"
     },
     {
         "hex": "&#9986;",
-        "category": "Objects (office)"
+        "category": "Objects (office)",
+        "emoji": "✂️"
     },
     {
         "hex": "&#9918;",
-        "category": ""
+        "category": "",
+        "emoji": "⚾️"
     },
     {
         "hex": "&#127946;&#127999;&zwj;&#9792;",
-        "category": "People & Body (person-sport)"
+        "category": "People & Body (person-sport)",
+        "emoji": "🏊🏿‍♀"
     },
     {
         "hex": "&#128273;",
-        "category": "Objects (lock)"
+        "category": "Objects (lock)",
+        "emoji": "🔑"
     },
     {
         "hex": "&#127969;",
-        "category": "Travel & Places (place-building)"
+        "category": "Travel & Places (place-building)",
+        "emoji": "🏡"
     },
     {
         "hex": "&#127912;",
-        "category": "Activities (arts & crafts)"
+        "category": "Activities (arts & crafts)",
+        "emoji": "🎨"
     },
     {
         "hex": "&#9993;",
-        "category": "Objects (mail)"
+        "category": "Objects (mail)",
+        "emoji": "✉️"
     },
     {
         "hex": "&#127837;",
-        "category": "Food & Drink (food-asian)"
+        "category": "Food & Drink (food-asian)",
+        "emoji": "🍝"
     },
     {
         "hex": "&#128703;",
-        "category": "Objects (household)"
+        "category": "Objects (household)",
+        "emoji": "🚿"
     },
     {
         "hex": "&#127937;",
-        "category": "Flags (flag)"
+        "category": "Flags (flag)",
+        "emoji": "🏁"
     },
     {
         "hex": "&#8986;",
-        "category": "Travel & Places (time)"
+        "category": "Travel & Places (time)",
+        "emoji": "⌚"
     },
     {
         "hex": "&#9803;",
-        "category": "Symbols (zodiac)"
+        "category": "Symbols (zodiac)",
+        "emoji": "♋"
     },
     {
         "hex": "&#127755;",
-        "category": "Travel & Places (place-geographic)"
+        "category": "Travel & Places (place-geographic)",
+        "emoji": "🌋"
     },
     {
         "hex": "&#128704;&#127999;",
-        "category": "People & Body (person-resting)"
+        "category": "People & Body (person-resting)",
+        "emoji": "🛀🏿"
     },
     {
         "hex": "&#9962;",
-        "category": "Travel & Places (place-religious)"
+        "category": "Travel & Places (place-religious)",
+        "emoji": "⛪"
     },
     {
         "hex": "&#128303;",
-        "category": "Symbols (religion)"
+        "category": "Symbols (religion)",
+        "emoji": "🔯"
     },
     {
         "hex": "&#128287;",
-        "category": "Symbols (keycap)"
+        "category": "Symbols (keycap)",
+        "emoji": "🔟"
     },
     {
         "hex": "&#128225;",
-        "category": "Objects (science)"
+        "category": "Objects (science)",
+        "emoji": "📡"
     },
     {
         "hex": "&#129303;",
-        "category": "Smileys & Emotion (face-hand)"
+        "category": "Smileys & Emotion (face-hand)",
+        "emoji": "🤗"
     },
     {
         "hex": "&#128718;",
-        "category": "Travel & Places (hotel)"
+        "category": "Travel & Places (hotel)",
+        "emoji": "🛎"
     },
     {
         "hex": "&#129408;",
-        "category": "Food & Drink (food-marine)"
+        "category": "Food & Drink (food-marine)",
+        "emoji": "🦀"
     },
     {
         "hex": "&#x1F920;",
-        "category": "Smileys & Emotion (face-hat)"
+        "category": "Smileys & Emotion (face-hat)",
+        "emoji": "🤠"
     },
     {
         "hex": "&#x1F3FB;",
-        "category": "Component (skin-tone)"
+        "category": "Component (skin-tone)",
+        "emoji": "🏻"
     },
     {
         "hex": "&#x1F9B0;",
-        "category": "Component (hair-style)"
+        "category": "Component (hair-style)",
+        "emoji": "🦰"
     },
     {
         "hex": "&#x2640;&#xFE0F;",
-        "category": "Symbols (gender)"
+        "category": "Symbols (gender)",
+        "emoji": "♀️"
     },
     {
         "hex": "&#x1F3F4;&#xE0067;&#xE0062;&#xE0065;&#xE006E;&#xE0067;&#xE007F;",
-        "category": "Flags (subdivision-flag)"
+        "category": "Flags (subdivision-flag)",
+        "emoji": "🏴󠁧󠁢󠁥󠁮󠁧󠁿"
     },
     {
         "hex": "&#x1F3F4;&#xE0067;&#xE0062;&#xE0077;&#xE006C;&#xE0073;&#xE007F;",
-        "category": "(subdivision-flag)"
+        "category": "(subdivision-flag)",
+        "emoji": "🏴󠁧󠁢󠁷󠁬󠁳󠁿"
     }
 ]

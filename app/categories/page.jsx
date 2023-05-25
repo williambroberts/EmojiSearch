@@ -19,7 +19,7 @@ const CaterogiesPage = () => {
       {searchInput===undefined? categories.map((item,index)=>( 
         <CategoriesItem hex={item.hex} key={uuidv4()} text={item.category} index={index}/>))
       :categories.filter((item)=>item.category.toLowerCase().includes(searchInput)).map((item,index)=>( 
-        <CategoriesItem hex={item.hex} key={uuidv4()} text={item.category} index={index}/>
+        <CategoriesItem hex={item.hex} key={uuidv4()} text={item.category}  emoji={item.emoji} index={index}/>
       )
       )}
     </div>
