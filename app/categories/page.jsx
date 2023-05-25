@@ -13,7 +13,7 @@ const CaterogiesPage = () => {
    <main id="categories-main">
     {/* search bar */}
     {/* order by ?? */}
-   <input className='category-search-input'
+   <input className='category-search-input' placeholder='Search Categories'
     type="text" value={searchInput} name="categories-search" onChange={(e)=>setSearchInput(e.target.value.toLowerCase())}/>
     <div className='categories-container'>
       {searchInput===undefined? categories.map((item,index)=>( 

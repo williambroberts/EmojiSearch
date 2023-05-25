@@ -9,3 +9,11 @@
     width: min-content;
     padding: 0.25rem 0.5rem;
 }
+
+.flex-col {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
+}

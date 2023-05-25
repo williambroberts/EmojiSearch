@@ -17,17 +17,21 @@ const IndividualcategoryPage = ({params: {category}}) => {
       {/* category name */}
       <BackButton/>
       {/* back */}
-     
-      <table className='individual-category-table'>
+      <div className='category-grid'>
+      {emojis.filter((item,index)=> item.category===categories[category].category).map((item,index)=> (<EmojiItem key={uuidv4()} item={item} index={index} pathname={pathname}/> ) )}
+      </div>
+
+
+      {/* <table className='individual-category-table'>
         <thead>
         <tr>
           <th>Character</th><th>Name</th><th>Copy</th><th>Details</th>
         </tr>
         </thead>
-        <tbody>
+        <tbody className='individual-category-table-body'>
         {emojis.filter((item,index)=> item.category===categories[category].category).map((item,index)=> (<EmojiItem key={uuidv4()} item={item} index={index} pathname={pathname}/> ) )}
        </tbody>
-      </table>
+      </table> */}
       </main>
   )
 }
