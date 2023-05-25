@@ -3,18 +3,31 @@ import "../styles/footer.css"
 import "../styles/header.css"
 import "../styles/misc.css"
 import { Inter } from 'next/font/google'
+import ProviderForTheme from '@/components/theme/themeProvider'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'Emoji Search',
-  description: 'An Emoji search site for copying emoji code snippets',
+  charSet: 'utf-8',
+  robots:'index,follow',
+  viewport:'width=device-width',
+  title: {
+    default:"EmojiSearch",
+    template:" %s | EmojiSearch"
+  },
+  description:"An emoji search and copy code snippets site",
+  keywords:["emoji","emoji search"]
 }
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      
+      <body className={inter.className}>
+        <ProviderForTheme>
+         {children}
+        </ProviderForTheme>
+       </body>
     </html>
   )
 }
