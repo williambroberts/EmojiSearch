@@ -2,9 +2,12 @@ import '../styles/globals.css'
 import "../styles/footer.css"
 import "../styles/header.css"
 import "../styles/misc.css"
+import "../styles/categories.css"
+import "../styles/search.css"
 import { Inter } from 'next/font/google'
 import ProviderForTheme from '@/components/theme/themeProvider'
-
+import Footer from '@/components/footer/footer'
+import Header from '@/components/header/header'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
@@ -25,7 +28,9 @@ export default function RootLayout({ children }) {
       
       <body className={inter.className}>
         <ProviderForTheme>
+          <Header/>
          {children}
+         <Footer/>
         </ProviderForTheme>
        </body>
     </html>

@@ -1,101 +1,398 @@
 [
-    "People & Body (family)",
-    "Smileys & Emotion (face-smiling)",
-    "Smileys & Emotion (emotion)",
-    "Activities (game)",
-    "Smileys & Emotion (face-affection)",
-    "Smileys & Emotion (face-concerned)",
-    "Smileys & Emotion (face-neutral-skeptical)",
-    "People & Body (hand-fingers-partial)",
-    "Smileys & Emotion (face-sleepy)",
-    "Symbols (other-symbol)",
-    "People & Body (hand-fingers-closed)",
-    "People & Body (hands)",
-    "Objects (music)",
-    "Smileys & Emotion (monkey-face)",
-    "Smileys & Emotion (face-glasses)",
-    "People & Body (body-parts)",
-    "Activities (event)",
-    "People & Body (person-gesture)",
-    "Smileys & Emotion (face-tongue)",
-    "Symbols (arrow)",
-    "People & Body (hand-fingers-open)",
-    "People & Body (hand-single-finger)",
-    "Animals & Nature (plant-flower)",
-    "Travel & Places (sky & weather)",
-    "Smileys & Emotion (face-negative)",
-    "Objects (light & video)",
-    "Smileys & Emotion (cat-face)",
-    "Smileys & Emotion (face-unwell)",
-    "Symbols (av-symbol)",
-    "Objects (clothing)",
-    "Objects (tool)",
-    "People & Body (person-activity)",
-    "Symbols (geometric)",
-    "Smileys & Emotion (face-costume)",
-    "Food & Drink (food-prepared)",
-    "Animals & Nature (plant-other)",
-    "Animals & Nature (animal-bird)",
-    "Travel & Places (transport-air)",
-    "Symbols (warning)",
-    "People & Body (hand-prop)",
-    "Activities (sport)",
-    "People & Body (person-fantasy)",
-    "Food & Drink (drink)",
-    "Travel & Places (place-map)",
-    "Travel & Places (transport-water)",
-    "Animals & Nature (animal-mammal)",
-    "Objects (money)",
-    "Food & Drink (food-sweet)",
-    "Travel & Places (place-other)",
-    "Objects (phone)",
-    "People & Body (person-role)",
-    "Activities (award-medal)",
-    "Flags (country-flag)",
-    "Food & Drink (dishware)",
-    "Symbols (alphanum)",
-    "Animals & Nature (animal-bug)",
-    "Objects (musical-instrument)",
-    "Food & Drink (food-fruit)",
-    "Food & Drink (food-vegetable)",
-    "People & Body (person)",
-    "People & Body (person-symbol)",
-    "Objects (other-object)",
-    "Animals & Nature (animal-reptile)",
-    "Animals & Nature (animal-amphibian)",
-    "Travel & Places (transport-ground)",
-    "Objects (book-paper)",
-    "Objects (medical)",
-    "Symbols (transport-sign)",
-    "Animals & Nature (animal-marine)",
-    "Objects (computer)",
-    "Objects (writing)",
-    "Objects (sound)",
-    "Objects (office)",
-    "",
-    "People & Body (person-sport)",
-    "Objects (lock)",
-    "Travel & Places (place-building)",
-    "Activities (arts & crafts)",
-    "Objects (mail)",
-    "Food & Drink (food-asian)",
-    "Objects (household)",
-    "Flags (flag)",
-    "Travel & Places (time)",
-    "Symbols (zodiac)",
-    "Travel & Places (place-geographic)",
-    "People & Body (person-resting)",
-    "Travel & Places (place-religious)",
-    "Symbols (religion)",
-    "Symbols (keycap)",
-    "Objects (science)",
-    "Smileys & Emotion (face-hand)",
-    "Travel & Places (hotel)",
-    "Food & Drink (food-marine)",
-    "Smileys & Emotion (face-hat)",
-    "Component (skin-tone)",
-    "Component (hair-style)",
-    "Symbols (gender)",
-    "Flags (subdivision-flag)",
-    "(subdivision-flag)"
+    {
+        "hex": "&#128105;&zwj;&#128105;&zwj;&#128103;&zwj;&#128103;",
+        "category": "People & Body (family)"
+    },
+    {
+        "hex": "&#128514;",
+        "category": "Smileys & Emotion (face-smiling)"
+    },
+    {
+        "hex": "&#10084;",
+        "category": "Smileys & Emotion (emotion)"
+    },
+    {
+        "hex": "&#9971;️",
+        "category": "Activities (game)"
+    },
+    {
+        "hex": "&#128525;",
+        "category": "Smileys & Emotion (face-affection)"
+    },
+    {
+        "hex": "&#128557;",
+        "category": "Smileys & Emotion (face-concerned)"
+    },
+    {
+        "hex": "&#128530;",
+        "category": "Smileys & Emotion (face-neutral-skeptical)"
+    },
+    {
+        "hex": "&#128076;&#127999;",
+        "category": "People & Body (hand-fingers-partial)"
+    },
+    {
+        "hex": "&#128532;",
+        "category": "Smileys & Emotion (face-sleepy)"
+    },
+    {
+        "hex": "&#9851;",
+        "category": "Symbols (other-symbol)"
+    },
+    {
+        "hex": "&#128077;&#127999;",
+        "category": "People & Body (hand-fingers-closed)"
+    },
+    {
+        "hex": "&#128591;&#127999;",
+        "category": "People & Body (hands)"
+    },
+    {
+        "hex": "&#127926;",
+        "category": "Objects (music)"
+    },
+    {
+        "hex": "&#128584;",
+        "category": "Smileys & Emotion (monkey-face)"
+    },
+    {
+        "hex": "&#128526;",
+        "category": "Smileys & Emotion (face-glasses)"
+    },
+    {
+        "hex": "&#128064;",
+        "category": "People & Body (body-parts)"
+    },
+    {
+        "hex": "&#10024;",
+        "category": "Activities (event)"
+    },
+    {
+        "hex": "&#128129;&#127999;&zwj;&#9794;",
+        "category": "People & Body (person-gesture)"
+    },
+    {
+        "hex": "&#128540;",
+        "category": "Smileys & Emotion (face-tongue)"
+    },
+    {
+        "hex": "&#11013;",
+        "category": "Symbols (arrow)"
+    },
+    {
+        "hex": "&#9995;&#127999;",
+        "category": "People & Body (hand-fingers-open)"
+    },
+    {
+        "hex": "&#128073;&#127999;",
+        "category": "People & Body (hand-single-finger)"
+    },
+    {
+        "hex": "&#127800;",
+        "category": "Animals & Nature (plant-flower)"
+    },
+    {
+        "hex": "&#128293;",
+        "category": "Travel & Places (sky & weather)"
+    },
+    {
+        "hex": "&#128545;",
+        "category": "Smileys & Emotion (face-negative)"
+    },
+    {
+        "hex": "&#128247;",
+        "category": "Objects (light & video)"
+    },
+    {
+        "hex": "&#128571;",
+        "category": "Smileys & Emotion (cat-face)"
+    },
+    {
+        "hex": "&#128567;",
+        "category": "Smileys & Emotion (face-unwell)"
+    },
+    {
+        "hex": "&#9654;",
+        "category": "Symbols (av-symbol)"
+    },
+    {
+        "hex": "&#128081;",
+        "category": "Objects (clothing)"
+    },
+    {
+        "hex": "&#128299;",
+        "category": "Objects (tool)"
+    },
+    {
+        "hex": "&#128131;&#127999;",
+        "category": "People & Body (person-activity)"
+    },
+    {
+        "hex": "&#128308;",
+        "category": "Symbols (geometric)"
+    },
+    {
+        "hex": "&#128169;",
+        "category": "Smileys & Emotion (face-costume)"
+    },
+    {
+        "hex": "&#127829;",
+        "category": "Food & Drink (food-prepared)"
+    },
+    {
+        "hex": "&#127811;",
+        "category": "Animals & Nature (plant-other)"
+    },
+    {
+        "hex": "&#128039;",
+        "category": "Animals & Nature (animal-bird)"
+    },
+    {
+        "hex": "&#9992;",
+        "category": "Travel & Places (transport-air)"
+    },
+    {
+        "hex": "&#128286;",
+        "category": "Symbols (warning)"
+    },
+    {
+        "hex": "&#128133;&#127999;",
+        "category": "People & Body (hand-prop)"
+    },
+    {
+        "hex": "&#9917;",
+        "category": "Activities (sport)"
+    },
+    {
+        "hex": "&#128124;&#127999;",
+        "category": "People & Body (person-fantasy)"
+    },
+    {
+        "hex": "&#127867;",
+        "category": "Food & Drink (drink)"
+    },
+    {
+        "hex": "&#127757;",
+        "category": "Travel & Places (place-map)"
+    },
+    {
+        "hex": "&#9875;",
+        "category": "Travel & Places (transport-water)"
+    },
+    {
+        "hex": "&#128054;",
+        "category": "Animals & Nature (animal-mammal)"
+    },
+    {
+        "hex": "&#128176;",
+        "category": "Objects (money)"
+    },
+    {
+        "hex": "&#127874;",
+        "category": "Food & Drink (food-sweet)"
+    },
+    {
+        "hex": "&#9832;",
+        "category": "Travel & Places (place-other)"
+    },
+    {
+        "hex": "&#9742;",
+        "category": "Objects (phone)"
+    },
+    {
+        "hex": "&#128120;&#127999;",
+        "category": "People & Body (person-role)"
+    },
+    {
+        "hex": "&#127942;",
+        "category": "Activities (award-medal)"
+    },
+    {
+        "hex": "&#127482;",
+        "category": "Flags (country-flag)"
+    },
+    {
+        "hex": "&#128298;",
+        "category": "Food & Drink (dishware)"
+    },
+    {
+        "hex": "&#127383;",
+        "category": "Symbols (alphanum)"
+    },
+    {
+        "hex": "&#128029;",
+        "category": "Animals & Nature (animal-bug)"
+    },
+    {
+        "hex": "&#127928;",
+        "category": "Objects (musical-instrument)"
+    },
+    {
+        "hex": "&#127827;",
+        "category": "Food & Drink (food-fruit)"
+    },
+    {
+        "hex": "&#127814;",
+        "category": "Food & Drink (food-vegetable)"
+    },
+    {
+        "hex": "&#128118;&#127999;",
+        "category": "People & Body (person)"
+    },
+    {
+        "hex": "&#128099;",
+        "category": "People & Body (person-symbol)"
+    },
+    {
+        "hex": "&#128684;",
+        "category": "Objects (other-object)"
+    },
+    {
+        "hex": "&#128013;",
+        "category": "Animals & Nature (animal-reptile)"
+    },
+    {
+        "hex": "&#128056;",
+        "category": "Animals & Nature (animal-amphibian)"
+    },
+    {
+        "hex": "&#128680;",
+        "category": "Travel & Places (transport-ground)"
+    },
+    {
+        "hex": "&#128213;",
+        "category": "Objects (book-paper)"
+    },
+    {
+        "hex": "&#128137;",
+        "category": "Objects (medical)"
+    },
+    {
+        "hex": "&#128686;",
+        "category": "Symbols (transport-sign)"
+    },
+    {
+        "hex": "&#128025;",
+        "category": "Animals & Nature (animal-marine)"
+    },
+    {
+        "hex": "&#128191;",
+        "category": "Objects (computer)"
+    },
+    {
+        "hex": "&#128221;",
+        "category": "Objects (writing)"
+    },
+    {
+        "hex": "&#128266;",
+        "category": "Objects (sound)"
+    },
+    {
+        "hex": "&#9986;",
+        "category": "Objects (office)"
+    },
+    {
+        "hex": "&#9918;",
+        "category": ""
+    },
+    {
+        "hex": "&#127946;&#127999;&zwj;&#9792;",
+        "category": "People & Body (person-sport)"
+    },
+    {
+        "hex": "&#128273;",
+        "category": "Objects (lock)"
+    },
+    {
+        "hex": "&#127969;",
+        "category": "Travel & Places (place-building)"
+    },
+    {
+        "hex": "&#127912;",
+        "category": "Activities (arts & crafts)"
+    },
+    {
+        "hex": "&#9993;",
+        "category": "Objects (mail)"
+    },
+    {
+        "hex": "&#127837;",
+        "category": "Food & Drink (food-asian)"
+    },
+    {
+        "hex": "&#128703;",
+        "category": "Objects (household)"
+    },
+    {
+        "hex": "&#127937;",
+        "category": "Flags (flag)"
+    },
+    {
+        "hex": "&#8986;",
+        "category": "Travel & Places (time)"
+    },
+    {
+        "hex": "&#9803;",
+        "category": "Symbols (zodiac)"
+    },
+    {
+        "hex": "&#127755;",
+        "category": "Travel & Places (place-geographic)"
+    },
+    {
+        "hex": "&#128704;&#127999;",
+        "category": "People & Body (person-resting)"
+    },
+    {
+        "hex": "&#9962;",
+        "category": "Travel & Places (place-religious)"
+    },
+    {
+        "hex": "&#128303;",
+        "category": "Symbols (religion)"
+    },
+    {
+        "hex": "&#128287;",
+        "category": "Symbols (keycap)"
+    },
+    {
+        "hex": "&#128225;",
+        "category": "Objects (science)"
+    },
+    {
+        "hex": "&#129303;",
+        "category": "Smileys & Emotion (face-hand)"
+    },
+    {
+        "hex": "&#128718;",
+        "category": "Travel & Places (hotel)"
+    },
+    {
+        "hex": "&#129408;",
+        "category": "Food & Drink (food-marine)"
+    },
+    {
+        "hex": "&#x1F920;",
+        "category": "Smileys & Emotion (face-hat)"
+    },
+    {
+        "hex": "&#x1F3FB;",
+        "category": "Component (skin-tone)"
+    },
+    {
+        "hex": "&#x1F9B0;",
+        "category": "Component (hair-style)"
+    },
+    {
+        "hex": "&#x2640;&#xFE0F;",
+        "category": "Symbols (gender)"
+    },
+    {
+        "hex": "&#x1F3F4;&#xE0067;&#xE0062;&#xE0065;&#xE006E;&#xE0067;&#xE007F;",
+        "category": "Flags (subdivision-flag)"
+    },
+    {
+        "hex": "&#x1F3F4;&#xE0067;&#xE0062;&#xE0077;&#xE006C;&#xE0073;&#xE007F;",
+        "category": "(subdivision-flag)"
+    }
 ]

@@ -1,0 +1,11 @@
+.back-button {
+    display: inline-block;
+    align-items: center;
+    cursor: pointer;
+    font-weight: 400;
+    color: var(--t-2);
+    background-color: var(--bg-2);
+    text-decoration: none;
+    width: min-content;
+    padding: 0.25rem 0.5rem;
+}

@@ -1,0 +1,52 @@
+.header {
+    display: flex;
+    position: fixed;
+    width: 100vw;
+    height: 80px;
+    background-color: var(--bg-1);
+    box-sizing: border-box;
+    padding: 1rem;
+    z-index: 1;
+    border-bottom: 1px solid var(--bg-4);
+}
+
+.header-nav {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.hamburger-blur {
+    display: none;
+    position: absolute;
+    width: 100vw;
+    height:100dvh;
+    background-color: var(--bg-2);
+    right: 0px;
+    top: 0px;
+    cursor: pointer;
+}
+.hamburger-blur.open {
+    display: flex;
+}
+.header-menu {
+    cursor: pointer;
+}
+.hamburger {
+position: absolute;
+top: 0px;
+left: 0px;
+background-color: var(--bg-3);
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;  
+  flex-direction: column;
+  transform: translate(-100%,0%);
+  width: 300px;
+  height: 100dvh;
+  transition: all 0.13s ease-in-out ;
+}
+
+.hamburger.open {
+    transform: translate(0%,0%);
+}

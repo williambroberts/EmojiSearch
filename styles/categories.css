@@ -1,0 +1,28 @@
+.categories-item {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    background-color: var(--bg-2);
+}
+
+.categories-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 0.125rem;
+
+}
+
+.individual-category-table {
+    border-collapse: collapse;
+    
+}
+
+.individual-category-title {
+
+}
+
+.emoji-item {
+    background-color: var(--bg-1);
+}
