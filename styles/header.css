@@ -5,7 +5,7 @@
     height: 80px;
     background-color: var(--bg-1);
     box-sizing: border-box;
-    padding: 1rem;
+    padding: 1rem 2rem;
     z-index: 1;
     border-bottom: 1px solid var(--bg-4);
 }
@@ -14,6 +14,7 @@
     display: flex;
     align-items: center;
     width: 100%;
+    box-sizing: border-box;
 }
 
 .hamburger-blur {
@@ -31,6 +32,23 @@
 }
 .header-menu {
     cursor: pointer;
+    display: flex;
+}
+.header-item {
+    display: none;
+    align-items: center;
+    color: var(--t-1);
+    text-decoration: none;
+    font-size: var(--font-size-16);
+    font-weight: 400;
+}
+@media (width>736px){
+    .header-menu {
+        display:none;
+    }
+    .header-item {
+        display: flex;
+    }
 }
 .hamburger {
 position: absolute;
@@ -49,4 +67,8 @@ background-color: var(--bg-3);
 
 .hamburger.open {
     transform: translate(0%,0%);
+}
+
+.header-theme {
+    margin-left: auto;
 }

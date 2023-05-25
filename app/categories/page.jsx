@@ -1,24 +1,24 @@
 "use client"
-import React, { useEffect } from 'react'
+import React, { useEffect,useState } from 'react'
 import { Noto_Color_Emoji } from 'next/font/google'
 import { v4 as uuidv4 } from 'uuid';
 const noto = Noto_Color_Emoji({subsets:["emoji"],weight:["400"]})
 import categories  from "../../lib/categories.json"
 import CategoriesItem from '@/components/categories/categoriesItem'
 const CaterogiesPage = () => {
-  useEffect(()=>{
-    let n = document.querySelector(".test-span")
-    n.innerHTML="&#128105;&zwj;&#128105;&zwj;&#128103;&zwj;&#128103;"
-  },[])
+    const [searchInput,setSearchInput]=useState()
 
- 
+  console.log(categories[0].category,searchInput)
   return (
    <main id="categories-main">
-   
-   
-    <span className='test-span'></span>
+    {/* search bar */}
+    {/* order by ?? */}
+   <input className='category-search-input'
+    type="text" value={searchInput} name="categories-search" onChange={(e)=>setSearchInput(e.target.value.toLowerCase())}/>
     <div className='categories-container'>
-      {categories.map((item,index)=>( 
+      {searchInput===undefined? categories.map((item,index)=>( 
+        <CategoriesItem hex={item.hex} key={uuidv4()} text={item.category} index={index}/>))
+      :categories.filter((item)=>item.category.toLowerCase().includes(searchInput)).map((item,index)=>( 
         <CategoriesItem hex={item.hex} key={uuidv4()} text={item.category} index={index}/>
       )
       )}

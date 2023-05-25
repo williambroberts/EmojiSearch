@@ -1,5 +1,5 @@
 "use client"
-
+import Link from 'next/link'
 import React, { useState } from 'react'
 import ThemeButton from '../theme/themeButton'
 import Hamburger from './hamburger'
@@ -8,7 +8,13 @@ const Header = () => {
   return (
    <header className='header'>
     <nav className='header-nav'>
+      <Link className='header-item' href={"/"}>Home</Link>
+      <Link className='header-item' href={"/categories"}>Categories</Link>
+      <Link className='header-item' href={"/search"}>Search</Link>
+      
       <span className='header-theme'><ThemeButton/></span>
+      <Link className='header-item' href={"/login"}>Login</Link>
+      <Link className='header-item' href={"/signup"}>Sign up</Link>
         <span className='header-menu' onClick={()=>setIsHamburger((prev)=>true)}>☰</span>
     </nav>
 
