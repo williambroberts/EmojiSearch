@@ -33,7 +33,7 @@ const SearchPage = () => {
   }
 
   const handlePagnation = (num)=>{
-    console.log(num,typeof(num),EndIndex,startIndex)
+    console.log(num,typeof(num),startIndex,EndIndex)
     if (num===NaN){
       
       return

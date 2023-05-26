@@ -9,6 +9,7 @@ import ProviderForTheme from '@/components/theme/themeProvider'
 import Footer from '@/components/footer/footer'
 import Header from '@/components/header/header'
 import RecentViewedEmojisProvider from '@/contexts/recent'
+import IsAUserLoggedInProvider from '@/contexts/authContext'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
@@ -30,11 +31,13 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <ProviderForTheme>
           <RecentViewedEmojisProvider>
-
+           <IsAUserLoggedInProvider>
+                  <Header/>
+                {children}
+                <Footer/>
+       
          
-          <Header/>
-         {children}
-         <Footer/>
+           </IsAUserLoggedInProvider>
           </RecentViewedEmojisProvider>
         </ProviderForTheme>
        </body>
