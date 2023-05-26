@@ -7,7 +7,7 @@ export const metadata = {
 
 const CategoriesLayout = ({children}) => {
   return (
-    <div>{children}</div>
+    <div className='layout-div'>{children}</div>
   )
 }
 export default CategoriesLayout

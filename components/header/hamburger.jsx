@@ -9,6 +9,7 @@ const Hamburger = ({setIsHAmburger,isHamburger}) => {
           <HamburgerItem link={"/"} text={"Home"} icon={""}/>
           <HamburgerItem link={"/categories"} text={"Categories"} icon={""}/>
           <HamburgerItem link={"/search"} text={"Search"} icon={""}/>
+          <HamburgerItem link={"/favorites"} text={"Favorites"} icon={""}/>
           <HamburgerItem link={"/login"} text={"Login"} icon={""}/>
           <HamburgerItem link={"/signup"} text={"Sign up"} icon={""}/>
         </FlexCol>
