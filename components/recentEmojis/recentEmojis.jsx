@@ -12,6 +12,8 @@ const RecentEmojis = () => {
     
         localStorage.setItem("emojiList",JSON.stringify([]))
         setRecentlyViewedEmojisListLength(0)
+        //setHasChanged((prev)=>prev)
+        setRecentEmojis([])
       }
     useEffect(()=>{
         console.log(hasChanged)

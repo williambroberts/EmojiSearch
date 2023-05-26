@@ -48,9 +48,15 @@ const EmojiItem = ({item,pathname,index}) => {
      
     
     let emojiToSave = emojis.filter((emoji,index)=>emoji.name===item.name)[0]
-
+    
     const emojiListSTring = localStorage.getItem("emojiList")
     let emojiList = JSON.parse(emojiListSTring)
+    for (let item of emojiList){
+      if (item.name===emojiToSave.name){
+        console.log("in already")
+        return 
+      }
+    }
      console.log("to save",emojiToSave)
     if (emojiList!==null){
 
