@@ -7,7 +7,7 @@ import Link from 'next/link';
 import IconCopy from '../icons/action/copy';
 import EmojiModal from './emopjiModal';
 import FlexRow from '../setup/flexRow';
-
+import emojis from "../../lib/emojis.json"
 const EmojiItem = ({item,pathname,index}) => {
   const [clicked,setClicked]=useState(false)
  
@@ -19,6 +19,21 @@ const EmojiItem = ({item,pathname,index}) => {
     },2000)
   }
   const OpenModal = ()=>{
+    //if no list of emojis in local storage make one
+    // save to local storage the emoji get emoji huge list index
+    let emojiToSave = emojis.filter((emoji,index)=>emoji.name===item.name)[0]
+    const emojiListSTring = localStorage.getItem("emojiList")
+    const emojiList = JSON.parse(emojiListSTring)
+     console.log("to save",emojiToSave,typeof(emojiList),emojiList.length,typeof([]))
+    if (emojiList!==null){
+      let newEmojiList = [...emojiList,emojiToSave]
+      localStorage.setItem("emojiList",JSON.stringify(newEmojiList))
+    }else {
+      let newEmojiList = [emojiToSave]
+      localStorage.setItem("emojiList",JSON.stringify(newEmojiList))
+    }
+   
+    //localStorage.setItem('myObject', JSON.stringify(myObject));
     let myDialog = document.querySelector(`#emoji-modal${index}`)
     myDialog.showModal()
   }

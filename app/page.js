@@ -6,7 +6,7 @@ export default function Home() {
   return (
    <main>
       home
-      
+      <div>clear recent emojis</div>
    </main>
   )
 }

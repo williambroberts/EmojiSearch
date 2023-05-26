@@ -11,12 +11,16 @@ import BackButton from '@/components/setup/buttons/backButton'
 import Title from '@/components/setup/title'
 const IndividualcategoryPage = ({params: {category}}) => {
   const pathname = usePathname()
+  const handleClearViews = ()=>{
+    
+    localStorage.setItem("emojiList",JSON.stringify([]))
+  }
   return (
     <main>
     <Title text={categories[category].category}/> 
      
       <BackButton/>
-     
+     <button onClick={()=>handleClearViews()}>clear recent</button>
       <div className='category-grid'>
       {emojis.filter((item,index)=> item.category===categories[category].category).map((item,index)=> (<EmojiItem key={uuidv4()} item={item} index={index} pathname={pathname}/> ) )}
       </div>

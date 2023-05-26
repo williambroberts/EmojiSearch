@@ -15,8 +15,14 @@ const SearchPage = () => {
   const [results,setResults]=useState(undefined)
   const disallowedSearched = ["",undefined," "]
   const handleSearch = (e)=> {
+    console.log(e.target.value)
     if (e.target.value<3){
-      setResults(undefined)
+      
+      setResults((prev)=>{
+        return undefined
+      })
+      SetSearchText(e.target.value.toLowerCase())
+      return
     }
     SetSearchText(e.target.value.toLowerCase())
     let newResults = emojis.filter((item,index)=> item.name.toLowerCase().includes(searchText))
@@ -25,15 +31,18 @@ const SearchPage = () => {
 
   const handlePagnation = (e)=>{
     
-    if (e.target.value>100){
-      setPagnationLength(100)
-      setEndIndex(100)
+    if (e.target.value>50){
+      setPagnationLength(50)
+      setEndIndex(50)
+      setStartIndex(0)
     }else if (e.target.value<0){
       setPagnationLength(1)
       setEndIndex(1)
+      setStartIndex(0)
     }else {
       setPagnationLength(parseInt(e.target.value))
       setEndIndex(parseInt(e.target.value))
+      setStartIndex(0)
     }
 
   }
@@ -65,11 +74,11 @@ const SearchPage = () => {
       type='text' placeholder='Search for an Emoji' value={searchText} onChange={(e)=>handleSearch(e)}/>
       <FlexRow>
         <button className='' onClick={()=>handlePrev()}>prev</button>
-      <input type='number' min="1" max="100" name='results-length' value={pagnationLength} onInput={(e)=>handlePagnation(e)}/>
+      <input type='number' min="1" max="50" name='results-length' value={pagnationLength} onInput={(e)=>handlePagnation(e)}/>
       <button className='' onClick={()=>handleNext()}>Next</button>
       </FlexRow>
       <FlexRow>
-           <span>{disallowedSearched.includes(searchText)? "": `${results.length } Emojis found`} </span>
+           <span>{disallowedSearched.includes(searchText)? "":searchText.length<3? "": `${results.length } Emojis found`} </span>
            {results===undefined? "": <span>showing results {startIndex+1}:{EndIndex}</span>}
       </FlexRow>
    
