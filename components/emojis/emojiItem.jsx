@@ -3,7 +3,8 @@ import React, {useContext, useEffect, useState} from 'react'
 import { v4 as uuidv4 } from 'uuid';
 import { Noto_Color_Emoji } from 'next/font/google'
 import { addDoc, collection, setDoc, deleteDoc, doc, query, onSnapshot } from "firebase/firestore";
-import { firestore } from '@/firebase/config';
+import { getAuth } from 'firebase/auth';
+import firebase_app, { firestore } from '@/firebase/config';
 const noto = Noto_Color_Emoji({subsets:["emoji"],weight:["400"]})
 import Link from 'next/link';
 import IconCopy from '../icons/action/copy';
@@ -80,9 +81,21 @@ const EmojiItem = ({item,pathname,index}) => {
     }
   }
 
-  const handleFav = ()=>{
-    // set this to fav in users list if not already
+  const handleFav =async ()=>{
 
+    
+    // set this to fav in users list if not already
+    const myStore = collection(firestore, "favorites")
+    console.log("fav!!",user.uid,myStore)
+    let data = {
+       emoji:item.emoji
+    }
+    try {
+      //addDoc(myStore, data)
+      setDoc(doc(firestore, 'favorites',user.uid),data)
+    }catch (err){
+      console.log(err,"err")
+    }
   }
   return (
     <div className='emoji-item'>

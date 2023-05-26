@@ -11,9 +11,9 @@ const IsAUserLoggedInProvider = ({children}) => {
     const [user,setUser]=useState(null)
     const [isLoading,setisLoading]=useState(true)
     useEffect(()=>{
-        const isUser = onAuthStateChanged(auth, (user)=>{
-            if (user){
-                setUser(user)
+        const isUser = onAuthStateChanged(auth, (person)=>{
+            if (person){
+                setUser(person)
             }else{
                 setUser(null)
             }

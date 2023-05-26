@@ -2,6 +2,8 @@
 import React, {useState} from 'react'
 import signUp from '@/firebase/auth/singupFunc'
 import { useRouter } from 'next/navigation'
+import { addDoc, collection, setDoc, deleteDoc, doc, query, onSnapshot } from "firebase/firestore";
+import { firestore } from '@/firebase/config';
 import Link from 'next/link'
 const SignUpForm = () => {
     const [email,setEmail]=useState()
@@ -17,7 +19,7 @@ const SignUpForm = () => {
             console.log("change here will error on sign up")
             return
         }else {
-            console.log(result)
+            console.log(result.user.uid,"here will" ,Object.keys(result.user))
             router.push("/favorites")
             return
         }
