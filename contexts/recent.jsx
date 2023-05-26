@@ -5,12 +5,16 @@ const RecentViewedEmojisProvider = ({children}) => {
     const [recentlyViewedEmojisListLength,setRecentlyViewedEmojisListLength]=useState(0)
 
     useEffect(()=>{
-
-    }[recentlyViewedEmojisListLength])
+        if (recentlyViewedEmojisListLength>20){
+            const emojiListSTring = localStorage.getItem("emojiList")
+            const emojiList = JSON.parse(emojiListSTring).slice(1)
+            localStorage.setItem("emojiList",JSON.stringify(emojiList))
+        }
+    },[recentlyViewedEmojisListLength])
   return (
-    <recentContext.Provider value={{recentlyViewedEmojisListLength,setRecentlyViewedEmojisListLength}}>
+    <recentlyViewedEmojiContext.Provider value={{recentlyViewedEmojisListLength,setRecentlyViewedEmojisListLength}}>
         {children}
-    </recentContext.Provider>
+    </recentlyViewedEmojiContext.Provider>
   )
 }
 

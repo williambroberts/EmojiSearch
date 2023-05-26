@@ -1,5 +1,5 @@
 "use client"
-import React, {useContext, useState} from 'react'
+import React, {useContext, useEffect, useState} from 'react'
 import { v4 as uuidv4 } from 'uuid';
 import { Noto_Color_Emoji } from 'next/font/google'
 const noto = Noto_Color_Emoji({subsets:["emoji"],weight:["400"]})
@@ -12,7 +12,7 @@ import emojis from "../../lib/emojis.json"
 const EmojiItem = ({item,pathname,index}) => {
   const {recentlyViewedEmojisListLength,setRecentlyViewedEmojisListLength}=useContext(recentlyViewedEmojiContext)
   const [clicked,setClicked]=useState(false)
- 
+  const [toOpen,setToOpen]=useState(false)
   const handleCopy = ()=>{
     navigator.clipboard.writeText(item.emoji)
     setClicked((prev)=> {return !prev})
@@ -20,9 +20,21 @@ const EmojiItem = ({item,pathname,index}) => {
       return setClicked((prev)=>{return !prev})
     },2000)
   }
+  useEffect(()=> {
+    console.log("OK ")
+  },[toOpen])
+
   const OpenModal = ()=>{
-    //if no list of emojis in local storage make one
-    // save to local storage the emoji get emoji huge list index
+   setToOpen((prev)=>!prev)
+    
+    let myDialog = document.querySelector(`#emoji-modal${index}`)
+    console.log(myDialog)
+    myDialog.showModal()
+    
+  }
+  
+  const closeModal = (e)=>{
+    let myDialog = document.querySelector(`#emoji-modal${index}`)
     let emojiToSave = emojis.filter((emoji,index)=>emoji.name===item.name)[0]
     const emojiListSTring = localStorage.getItem("emojiList")
     const emojiList = JSON.parse(emojiListSTring)
@@ -35,13 +47,6 @@ const EmojiItem = ({item,pathname,index}) => {
       localStorage.setItem("emojiList",JSON.stringify(newEmojiList))
     }
     setRecentlyViewedEmojisListLength((prev)=>prev+1)
-    //localStorage.setItem('myObject', JSON.stringify(myObject));
-    let myDialog = document.querySelector(`#emoji-modal${index}`)
-    myDialog.showModal()
-  }
-  const closeModal = (e)=>{
-    let myDialog = document.querySelector(`#emoji-modal${index}`)
-    
     if (e.target!==myDialog){
       return 
     }
