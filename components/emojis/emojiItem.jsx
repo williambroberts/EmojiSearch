@@ -1,5 +1,5 @@
 "use client"
-import React, {useState} from 'react'
+import React, {useContext, useState} from 'react'
 import { v4 as uuidv4 } from 'uuid';
 import { Noto_Color_Emoji } from 'next/font/google'
 const noto = Noto_Color_Emoji({subsets:["emoji"],weight:["400"]})
@@ -7,8 +7,10 @@ import Link from 'next/link';
 import IconCopy from '../icons/action/copy';
 import EmojiModal from './emopjiModal';
 import FlexRow from '../setup/flexRow';
+import { recentlyViewedEmojiContext } from '@/contexts/recent';
 import emojis from "../../lib/emojis.json"
 const EmojiItem = ({item,pathname,index}) => {
+  const {recentlyViewedEmojisListLength,setRecentlyViewedEmojisListLength}=useContext(recentlyViewedEmojiContext)
   const [clicked,setClicked]=useState(false)
  
   const handleCopy = ()=>{
@@ -32,7 +34,7 @@ const EmojiItem = ({item,pathname,index}) => {
       let newEmojiList = [emojiToSave]
       localStorage.setItem("emojiList",JSON.stringify(newEmojiList))
     }
-   
+    setRecentlyViewedEmojisListLength((prev)=>prev+1)
     //localStorage.setItem('myObject', JSON.stringify(myObject));
     let myDialog = document.querySelector(`#emoji-modal${index}`)
     myDialog.showModal()

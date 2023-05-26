@@ -1,5 +1,5 @@
 "use client"
-import React from 'react'
+import React, { useContext } from 'react'
 import { Noto_Color_Emoji } from 'next/font/google'
 import emojis from "../../../lib/emojis.json"
 import categories from "../../../lib/categories.json"
@@ -9,11 +9,14 @@ import EmojiItem from '@/components/emojis/emojiItem'
 import { v4 as uuidv4 } from 'uuid';
 import BackButton from '@/components/setup/buttons/backButton'
 import Title from '@/components/setup/title'
+import { recentlyViewedEmojiContext } from '@/contexts/recent'
 const IndividualcategoryPage = ({params: {category}}) => {
+  const {recentlyViewedEmojisListLength,setRecentlyViewedEmojisListLength}=useContext(recentlyViewedEmojiContext)
   const pathname = usePathname()
   const handleClearViews = ()=>{
     
     localStorage.setItem("emojiList",JSON.stringify([]))
+    setRecentlyViewedEmojisListLength(0)
   }
   return (
     <main>
