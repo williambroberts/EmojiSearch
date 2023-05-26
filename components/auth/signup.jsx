@@ -14,6 +14,7 @@ const SignUpForm = () => {
         const {result, error} = resArr
         if (error){
             console.log(error)
+            console.log("change here will error on sign up")
             return
         }else {
             console.log(result)

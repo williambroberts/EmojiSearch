@@ -15,6 +15,7 @@ const SearchPage = () => {
   const [results,setResults]=useState(undefined)
   const disallowedSearched = ["",undefined," "]
   const [isDisabled,setIsDisabled]=useState(false)
+  const [checked,setChecked]=useState(10)
   const handleSearch = (e)=> {
     console.log(e.target.value)
     if (e.target.value<3){
@@ -32,46 +33,46 @@ const SearchPage = () => {
     setStartIndex(0)
   }
 
-  const handlePagnation = (num)=>{
-    console.log(num,typeof(num),startIndex,EndIndex)
-    if (num===NaN){
+//   const handlePagnation = (num)=>{
+//     console.log(num,typeof(num),startIndex,EndIndex)
+//     if (num===NaN){
       
-      return
-    }
-    if (num>50){
-      setPagnationLength(50)
-      if (results!==undefined){
-         if ((EndIndex+num-pagnationLength)>results.length){
-            setEndIndex(results.length)
-         }else {
-         setEndIndex((prev)=>prev+num-pagnationLength)
-         }
+//       return
+//     }
+//     if (num>50){
+//       setPagnationLength(50)
+//       if (results!==undefined){
+//          if ((EndIndex+num-pagnationLength)>results.length){
+//             setEndIndex(results.length)
+//          }else {
+//          setEndIndex((prev)=>prev+num-pagnationLength)
+//          }
         
-      }
+//       }
      
    
-    }else if (num<0){
-      setPagnationLength(1)
-      setEndIndex((prev)=>startIndex+1)
+//     }else if (num<0){
+//       setPagnationLength(1)
+//       setEndIndex((prev)=>startIndex+1)
      
-    }else {
+//     }else {
       
-      if (results!==undefined){
-        if ((EndIndex+num-pagnationLength)>results.length){
-           setEndIndex(results.length)
-        }else {
-        setEndIndex((prev)=>prev+num-pagnationLength)
-        }
+//       if (results!==undefined){
+//         if ((EndIndex+num-pagnationLength)>results.length){
+//            setEndIndex(results.length)
+//         }else {
+//         setEndIndex((prev)=>prev+num-pagnationLength)
+//         }
       
       
-    }else{
-      setEndIndex(pagnationLength)
-      setStartIndex(0)
+//     }else{
+//       setEndIndex(pagnationLength)
+//       setStartIndex(0)
 
-    }
-  setPagnationLength(num)
-  }
-}
+//     }
+//   setPagnationLength(num)
+//   }
+// }
   const handlePrev = () =>{
     if (startIndex <pagnationLength){
       setStartIndex(0)
@@ -93,6 +94,14 @@ const SearchPage = () => {
       setStartIndex((prev)=>prev+pagnationLength)
     }
   }
+  const handleCheck =(e) =>{
+    let val = parseInt(e.target.name.slice(8))
+    setChecked(val)
+    console.log(checked,val)
+    setPagnationLength((prev)=>val)
+    setStartIndex(0)
+    setEndIndex((prev)=>val)
+  }
   //console.log(results.length,searchText)
   return (
     <main>
@@ -103,8 +112,14 @@ const SearchPage = () => {
       type='text' placeholder='Search for an Emoji' value={searchText} onChange={(e)=>handleSearch(e)}/>
       <FlexRow>
         <button className='' onClick={()=>handlePrev()} disabled={isDisabled}>prev</button>
-      <input type='number' min="1" max="50" name='results-length' value={pagnationLength} onInput={(e)=>handlePagnation(parseInt(e.target.value))}/>
+      {/* <input type='number' min="1" max="50" name='results-length' value={pagnationLength} onInput={(e)=>handlePagnation(parseInt(e.target.value))}/> */}
       <button className='' onClick={()=>handleNext()} disabled={isDisabled}>Next</button>
+      </FlexRow>
+      <FlexRow>
+        <input type='checkbox' checked={checked===5? true:false} name="checkbox5" onChange={(e)=>handleCheck(e)}/>
+        <input type='checkbox' checked={checked===10? true:false} name="checkbox10" onChange={(e)=>handleCheck(e)}/>  
+        <input type='checkbox' checked={checked===20? true:false} name="checkbox20" onChange={(e)=>handleCheck(e)}/>  
+        <input type='checkbox' checked={checked===50? true:false} name="checkbox50" onChange={(e)=>handleCheck(e)}/>  
       </FlexRow>
       <FlexRow>
            <span>{disallowedSearched.includes(searchText)? "_":searchText.length<3? "_": `${results.length } Emojis found`} </span>

@@ -2,14 +2,18 @@
 import React, {useContext, useEffect, useState} from 'react'
 import { v4 as uuidv4 } from 'uuid';
 import { Noto_Color_Emoji } from 'next/font/google'
+import { addDoc, collection, setDoc, deleteDoc, doc, query, onSnapshot } from "firebase/firestore";
+import { firestore } from '@/firebase/config';
 const noto = Noto_Color_Emoji({subsets:["emoji"],weight:["400"]})
 import Link from 'next/link';
 import IconCopy from '../icons/action/copy';
 import EmojiModal from './emopjiModal';
 import FlexRow from '../setup/flexRow';
 import { recentlyViewedEmojiContext } from '@/contexts/recent';
+import { IsAUserLoggedInContext } from '@/contexts/authContext';
 import emojis from "../../lib/emojis.json"
 const EmojiItem = ({item,pathname,index}) => {
+  const {user}=useContext(IsAUserLoggedInContext)
   const {recentlyViewedEmojisListLength,setRecentlyViewedEmojisListLength,hasChanged,setHasChanged}=useContext(recentlyViewedEmojiContext)
   const [clicked,setClicked]=useState(false)
   const [toOpen,setToOpen]=useState(false)
@@ -20,6 +24,7 @@ const EmojiItem = ({item,pathname,index}) => {
       return setClicked((prev)=>{return !prev})
     },2000)
   }
+ 
   useEffect(()=> {
     console.log("OK")
   },[toOpen])
@@ -74,9 +79,15 @@ const EmojiItem = ({item,pathname,index}) => {
    
     }
   }
+
+  const handleFav = ()=>{
+    // set this to fav in users list if not already
+
+  }
   return (
     <div className='emoji-item'>
-      <span className='emoji-item-favorite'>Fav</span>
+      <button className='emoji-item-favorite' onClick={()=>handleFav()} disabled={user===null? true: false}>⭐</button>
+      
       <FlexRow>
         <span className={`${noto.className} emoji-item-emoji `}>{item.emoji}</span>
         <span className='emoji-item-emoji'>{item.emoji}</span>

@@ -14,7 +14,7 @@ const Header = () => {
       <Link className='header-item' href={"/"}>Home</Link>
       <Link className='header-item' href={"/categories"}>Categories</Link>
       <Link className='header-item' href={"/search"}>Search</Link>
-      <Link className='header-item' href={"/favorites"}>Favorites</Link>
+      {user===null?"": <Link className='header-item' href={"/favorites"}>Favorites</Link> }
       <span className='header-theme'><ThemeButton/></span>
       {user===null? <Link className='header-item' href={"/login"}>Login</Link> :<LogoutComponent/>}
       {user===null? <Link className='header-item' href={"/signup"}>Sign up</Link>:""}

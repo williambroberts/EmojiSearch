@@ -14,6 +14,7 @@ const LoginForm = () => {
         const {result, error} = resArr
         if (error){
             console.log(error)
+            console.log("change here will error on login")
             return
         }else {
             console.log(result)

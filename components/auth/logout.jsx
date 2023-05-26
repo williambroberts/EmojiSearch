@@ -6,6 +6,7 @@ const LogoutComponent = () => {
     const router = useRouter()
     const handleLogout = ()=>{
         router.push("/")
+        console.log("logged out")
         logOut()
         
     }
