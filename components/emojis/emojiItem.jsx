@@ -10,7 +10,7 @@ import FlexRow from '../setup/flexRow';
 import { recentlyViewedEmojiContext } from '@/contexts/recent';
 import emojis from "../../lib/emojis.json"
 const EmojiItem = ({item,pathname,index}) => {
-  const {recentlyViewedEmojisListLength,setRecentlyViewedEmojisListLength}=useContext(recentlyViewedEmojiContext)
+  const {recentlyViewedEmojisListLength,setRecentlyViewedEmojisListLength,hasChanged,setHasChanged}=useContext(recentlyViewedEmojiContext)
   const [clicked,setClicked]=useState(false)
   const [toOpen,setToOpen]=useState(false)
   const handleCopy = ()=>{
@@ -21,12 +21,12 @@ const EmojiItem = ({item,pathname,index}) => {
     },2000)
   }
   useEffect(()=> {
-    console.log("OK ")
+    console.log("OK")
   },[toOpen])
 
   const OpenModal = ()=>{
-   setToOpen((prev)=>!prev)
-    
+  // setToOpen((prev)=>!prev)
+    // setRecentlyViewedEmojisListLength((prev)=>prev+1)
     let myDialog = document.querySelector(`#emoji-modal${index}`)
     console.log(myDialog)
     myDialog.showModal()
@@ -34,24 +34,39 @@ const EmojiItem = ({item,pathname,index}) => {
   }
   
   const closeModal = (e)=>{
+    
     let myDialog = document.querySelector(`#emoji-modal${index}`)
+    if (e.target!==myDialog){
+      return 
+    }
+     myDialog.close()
+     setHasChanged((prev=>!prev))
+    console.log(pathname,typeof(pathname))
+    if (pathname==="/"){
+      return
+    }else{
+     
+    
     let emojiToSave = emojis.filter((emoji,index)=>emoji.name===item.name)[0]
+
     const emojiListSTring = localStorage.getItem("emojiList")
-    const emojiList = JSON.parse(emojiListSTring)
-     console.log("to save",emojiToSave,typeof(emojiList),emojiList.length,typeof([]))
+    let emojiList = JSON.parse(emojiListSTring)
+     console.log("to save",emojiToSave)
     if (emojiList!==null){
+
+      console.log(emojiList.length)
+      if (emojiList.length>20){
+        emojiList=emojiList.slice(1)
+      }
       let newEmojiList = [...emojiList,emojiToSave]
       localStorage.setItem("emojiList",JSON.stringify(newEmojiList))
     }else {
       let newEmojiList = [emojiToSave]
       localStorage.setItem("emojiList",JSON.stringify(newEmojiList))
     }
-    setRecentlyViewedEmojisListLength((prev)=>prev+1)
-    if (e.target!==myDialog){
-      return 
+   
+   
     }
-    myDialog.close()
-    
   }
   return (
     <div className='emoji-item'>

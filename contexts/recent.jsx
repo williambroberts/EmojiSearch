@@ -3,16 +3,11 @@ import React, { createContext, useEffect, useState } from 'react'
 export const recentlyViewedEmojiContext = createContext()
 const RecentViewedEmojisProvider = ({children}) => {
     const [recentlyViewedEmojisListLength,setRecentlyViewedEmojisListLength]=useState(0)
-
-    useEffect(()=>{
-        if (recentlyViewedEmojisListLength>20){
-            const emojiListSTring = localStorage.getItem("emojiList")
-            const emojiList = JSON.parse(emojiListSTring).slice(1)
-            localStorage.setItem("emojiList",JSON.stringify(emojiList))
-        }
-    },[recentlyViewedEmojisListLength])
+    const [hasChanged,setHasChanged]=useState(false)
+    
   return (
-    <recentlyViewedEmojiContext.Provider value={{recentlyViewedEmojisListLength,setRecentlyViewedEmojisListLength}}>
+    <recentlyViewedEmojiContext.Provider value={{hasChanged,setHasChanged,
+    recentlyViewedEmojisListLength,setRecentlyViewedEmojisListLength}}>
         {children}
     </recentlyViewedEmojiContext.Provider>
   )
