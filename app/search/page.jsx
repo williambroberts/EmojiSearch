@@ -88,7 +88,12 @@ const SearchPage = () => {
     }
     if ((EndIndex+pagnationLength)>results.length){
       setEndIndex(results.length)
-      setStartIndex((prev)=>results.length-pagnationLength)
+      if (results.length<pagnationLength){
+        setStartIndex(0)
+      }else{
+        setStartIndex((prev)=>results.length-pagnationLength)
+      }
+      
     }else {
       setEndIndex((prev)=>prev+pagnationLength)
       setStartIndex((prev)=>prev+pagnationLength)
@@ -96,7 +101,9 @@ const SearchPage = () => {
   }
   const handleCheck =(e) =>{
     let val = parseInt(e.target.name.slice(8))
-    setChecked(val)
+    setChecked((prev)=>{
+      return val
+    })
     console.log(checked,val)
     setPagnationLength((prev)=>val)
     setStartIndex(0)
@@ -116,14 +123,17 @@ const SearchPage = () => {
       <button className='' onClick={()=>handleNext()} disabled={isDisabled}>Next</button>
       </FlexRow>
       <FlexRow>
-        <input type='checkbox' checked={checked===5? true:false} name="checkbox5" onChange={(e)=>handleCheck(e)}/>
+        <label htmlFor='checkbox5'>5
+            <input type='checkbox' checked={checked===5? true:false} name="checkbox5" onChange={(e)=>handleCheck(e)}/>
+        </label>
+      
         <input type='checkbox' checked={checked===10? true:false} name="checkbox10" onChange={(e)=>handleCheck(e)}/>  
         <input type='checkbox' checked={checked===20? true:false} name="checkbox20" onChange={(e)=>handleCheck(e)}/>  
         <input type='checkbox' checked={checked===50? true:false} name="checkbox50" onChange={(e)=>handleCheck(e)}/>  
       </FlexRow>
       <FlexRow>
            <span>{disallowedSearched.includes(searchText)? "_":searchText.length<3? "_": `${results.length } Emojis found`} </span>
-           {results===undefined? "":searchText.length<3? "_": <span>showing results {startIndex+1}:{EndIndex}</span>}
+           {results===undefined? "":searchText.length<3? "_": <span>showing results {startIndex+1}:{Math.min(EndIndex,results.length)}: {EndIndex},{pagnationLength}</span>}
       </FlexRow>
    
 
