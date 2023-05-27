@@ -123,13 +123,19 @@ const SearchPage = () => {
       <button className='' onClick={()=>handleNext()} disabled={isDisabled}>Next</button>
       </FlexRow>
       <FlexRow>
-        <label htmlFor='checkbox5'>5
-            <input type='checkbox' checked={checked===5? true:false} name="checkbox5" onChange={(e)=>handleCheck(e)}/>
+        <label htmlFor='checkbox5' className='search-checkbox-label'>
+
+            <input type='checkbox' checked={checked===5? true:false} name="checkbox5" onChange={(e)=>handleCheck(e)} className='search-checkbox5' />
         </label>
-      
-        <input type='checkbox' checked={checked===10? true:false} name="checkbox10" onChange={(e)=>handleCheck(e)}/>  
-        <input type='checkbox' checked={checked===20? true:false} name="checkbox20" onChange={(e)=>handleCheck(e)}/>  
-        <input type='checkbox' checked={checked===50? true:false} name="checkbox50" onChange={(e)=>handleCheck(e)}/>  
+        <label htmlFor='checkbox10'  className='search-checkbox-label'>
+        <input type='checkbox' checked={checked===10? true:false} name="checkbox10" onChange={(e)=>handleCheck(e)} className='search-checkbox10'/>  
+        </label>
+        <label htmlFor='checkbox20'  className='search-checkbox-label'>
+        <input type='checkbox' checked={checked===20? true:false} name="checkbox20" onChange={(e)=>handleCheck(e)} className='search-checkbox20'/>  
+        </label>
+        <label htmlFor='checkbox50'  className='search-checkbox-label'> 
+        <input type='checkbox' checked={checked===50? true:false} name="checkbox50" onChange={(e)=>handleCheck(e)} className='search-checkbox50'/>  
+        </label>
       </FlexRow>
       <FlexRow>
            <span>{disallowedSearched.includes(searchText)? "_":searchText.length<3? "_": `${results.length } Emojis found`} </span>

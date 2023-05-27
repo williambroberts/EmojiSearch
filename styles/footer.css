@@ -24,6 +24,7 @@ footer.footer {
     color: var(--t-1);
     font-size: var(--font-size-14);
     position: relative;
+    gap: 0.25rem;
 
 }
 .footer-link-icon {
