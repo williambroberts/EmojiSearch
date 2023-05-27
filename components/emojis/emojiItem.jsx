@@ -13,11 +13,15 @@ import FlexRow from '../setup/flexRow';
 import { recentlyViewedEmojiContext } from '@/contexts/recent';
 import { IsAUserLoggedInContext } from '@/contexts/authContext';
 import emojis from "../../lib/emojis.json"
+import Icon216StarEmpty from '../icons/action/hollowStar';
+import Icon218StarFull from '../icons/action/star';
 const EmojiItem = ({item,pathname,index}) => {
-  const {user}=useContext(IsAUserLoggedInContext)
+  const {user,usersFavs}=useContext(IsAUserLoggedInContext)
   const {recentlyViewedEmojisListLength,setRecentlyViewedEmojisListLength,hasChanged,setHasChanged}=useContext(recentlyViewedEmojiContext)
   const [clicked,setClicked]=useState(false)
   const [toOpen,setToOpen]=useState(false)
+  const [currentUserFavs,setCurrentUseFavs]=useState(null)
+  const [emojiStar,setEmojiStar]=useState(<Icon216StarEmpty/>)
   const handleCopy = ()=>{
     navigator.clipboard.writeText(item.emoji)
     setClicked((prev)=> {return !prev})
@@ -25,7 +29,19 @@ const EmojiItem = ({item,pathname,index}) => {
       return setClicked((prev)=>{return !prev})
     },2000)
   }
- 
+ useEffect(()=>{
+  setCurrentUseFavs((prev)=>{return usersFavs})
+
+  for (let emoji of usersFavs) {
+    if(emoji.name===item.name){
+      setEmojiStar((prev)=><Icon218StarFull/>)
+      break
+    }else {
+      setEmojiStar(<Icon216StarEmpty/>)
+    }
+  }
+  console.log("chane",usersFavs)
+ },[usersFavs])
   useEffect(()=> {
     console.log("OK")
   },[toOpen])
@@ -82,9 +98,9 @@ const EmojiItem = ({item,pathname,index}) => {
   }
 
   const handleFav =async ()=>{
-    const userFavRef = doc(firestore, 'favorites', user.email);
-    const data= await {emojis:[item]}
-   
+    const userFavRef = doc(firestore, 'favorites', user?.email);
+    //const data= await {emojis:[item]}
+  
     // try {
     //   await runTransaction(firestore, async (transaction) => {
     //     const docSnapshot = await transaction.get(userFavRef);
@@ -115,7 +131,7 @@ const EmojiItem = ({item,pathname,index}) => {
   }
   return (
     <div className='emoji-item'>
-      <button className='emoji-item-favorite' onClick={()=>handleFav()} disabled={user===null? true: false}>⭐</button>
+      <button className='emoji-item-favorite' onClick={()=>handleFav()} disabled={user===null? true: false}>{emojiStar}</button>
       
       <FlexRow>
         <span className={`${noto.className} emoji-item-emoji `}>{item.emoji}</span>
