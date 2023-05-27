@@ -67,7 +67,7 @@ const EmojiItem = ({item,pathname,index}) => {
       return 
     }
      myDialog.close()
-     setHasChanged((prev=>!prev))
+     setHasChanged((prev)=>!prev)
     console.log(pathname,typeof(pathname))
     if (pathname==="/"){
       return
