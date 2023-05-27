@@ -26,11 +26,11 @@ const LoginForm = () => {
     <div>
         <form onSubmit={(e)=>handleSubmit(e)}>
 
-            <label  htmlFor='login-email'/>
+            <label  htmlFor='login-email' className='form-label'>Email</label>
             <input type='email' name="login-email" placeholder='Email'  required onChange={(e)=>setEmail(e.target.value)}/>
-            <label  htmlFor='login-password'/>
+            <label  htmlFor='login-password' className='form-label'>Password</label>
             <input type='password' name="login-password" placeholder='Password'  required onChange={(e)=>setPassword(e.target.value)}/>
-            <button type='submit'>Login</button>
+            <button type='submit' className=''>Login</button>
         </form>
         <span>
            Don&apos;t have an account?

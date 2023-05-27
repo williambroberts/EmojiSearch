@@ -45,11 +45,11 @@ const EmojiItem = ({item,pathname,index}) => {
     console.log(err)
   }
   
-  console.log("chane",usersFavs)
+  // console.log("chane",usersFavs)
  },[usersFavs])
-  useEffect(()=> {
-    console.log("OK")
-  },[toOpen])
+  // useEffect(()=> {
+  //   console.log("OK")
+  // },[toOpen])
 
   const OpenModal = ()=>{
   // setToOpen((prev)=>!prev)
@@ -145,7 +145,7 @@ const EmojiItem = ({item,pathname,index}) => {
     <div className='emoji-item'>
       <button className='emoji-item-favourite' onClick={()=>handleFav()} disabled={user===null? true: false}>{isAFav? <Icon218StarFull/>:<Icon216StarEmpty/>}</button>
       
-      <FlexRow>
+      <FlexRow justifyContent={"center"}>
         <span className={`${noto.className} emoji-item-emoji `}>{item.emoji}</span>
         <span className='emoji-item-emoji'>{item.emoji}</span>
       </FlexRow>
@@ -158,11 +158,11 @@ const EmojiItem = ({item,pathname,index}) => {
      <span className='emoji-item-copy' onClick={()=>handleCopy()}>
       <span><IconCopy/> </span>
 
-     <span className='copy-span'>{clicked? "Copied!": "Copy  "}</span>
+     <span className='copy-span'><strong>{clicked? "Copied!": "Copy  "}</strong></span>
     
      </span>
       {/* <span><Link href={`${pathname}/${item.shortname}`}>View</Link></span> */}
-      <span className='emoji-item-open' onClick={()=>OpenModal()}>view</span>
+      <span className='emoji-item-open' onClick={()=>OpenModal()}><strong>view</strong></span>
 </FlexRow>
      <dialog id={`emoji-modal${index}`} className="emoji-dialog"
      onClick={(e)=>closeModal(e)}>

@@ -28,7 +28,8 @@ const IsAUserLoggedInProvider = ({children}) => {
     },[])
 
     useEffect(()=>{
-        try{
+        if (user!==null){
+            try{
             const unsub = onSnapshot(doc(firestore, "favorites", `${user?.email}`), (doc) => {
                         setUsersFavs(doc.data()?.emojis)
                     // console.log(doc.data()?.emojis)
@@ -36,6 +37,8 @@ const IsAUserLoggedInProvider = ({children}) => {
         }catch(err){
             console.log(err)
         }
+        }
+        
         
     },[user?.email])
 

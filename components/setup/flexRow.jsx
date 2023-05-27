@@ -1,8 +1,8 @@
 import React from 'react'
 
-const FlexRow = ({width,gap,children}) => {
+const FlexRow = ({width,gap,children,justifyContent}) => {
   return (
-    <div className='flex-row' style={{width:width,gap:gap}}>{children}</div>
+    <div className='flex-row' style={{width:width,gap:gap,justifyContent:justifyContent}}>{children}</div>
   )
 }
 
