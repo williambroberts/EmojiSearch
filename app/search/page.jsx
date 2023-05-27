@@ -112,39 +112,43 @@ const SearchPage = () => {
   //console.log(results.length,searchText)
   return (
     <main>
-      {/* back */}
-      {/*  */}
-      <Title text={"Emoji Search"}/>
+     <div className='search-header'>
+      <Title text={"Emoji Search"} margin={"1rem 0 0 0"}/>
       <input className='search-input'
       type='text' placeholder='Search for an Emoji' value={searchText} onChange={(e)=>handleSearch(e)}/>
       <FlexRow>
-        <button className='' onClick={()=>handlePrev()} disabled={isDisabled}>prev</button>
+        <span className='prev-button' onClick={()=>handlePrev()} disabled={isDisabled}>prev</span>
       {/* <input type='number' min="1" max="50" name='results-length' value={pagnationLength} onInput={(e)=>handlePagnation(parseInt(e.target.value))}/> */}
-      <button className='' onClick={()=>handleNext()} disabled={isDisabled}>Next</button>
+      <span className='next-button' onClick={()=>handleNext()} disabled={isDisabled}>Next</span>
       </FlexRow>
       <FlexRow>
         <label htmlFor='checkbox5' className='search-checkbox-label'>
 
             <input type='checkbox' checked={checked===5? true:false} name="checkbox5" onChange={(e)=>handleCheck(e)} className='search-checkbox5' />
+            <span className='search-checkbox-span5'>5</span>
         </label>
         <label htmlFor='checkbox10'  className='search-checkbox-label'>
         <input type='checkbox' checked={checked===10? true:false} name="checkbox10" onChange={(e)=>handleCheck(e)} className='search-checkbox10'/>  
+        <span className='search-checkbox-span10'>10</span>
         </label>
         <label htmlFor='checkbox20'  className='search-checkbox-label'>
         <input type='checkbox' checked={checked===20? true:false} name="checkbox20" onChange={(e)=>handleCheck(e)} className='search-checkbox20'/>  
+        <span className='search-checkbox-span20'>20</span>
         </label>
         <label htmlFor='checkbox50'  className='search-checkbox-label'> 
         <input type='checkbox' checked={checked===50? true:false} name="checkbox50" onChange={(e)=>handleCheck(e)} className='search-checkbox50'/>  
-        </label>
+        <span className='search-checkbox-span50'>50</span>
+       </label>
       </FlexRow>
+      </div>
       <FlexRow>
-           <span>{disallowedSearched.includes(searchText)? "_":searchText.length<3? "_": `${results.length } Emojis found`} </span>
-           {results===undefined? "":searchText.length<3? "_": <span>showing results {startIndex+1}:{Math.min(EndIndex,results.length)}: {EndIndex},{pagnationLength}</span>}
+           <span>{disallowedSearched.includes(searchText)? <div></div>:searchText.length<3? <div></div>: `${results.length } Emojis found`} </span>
+           {results===undefined? "":searchText.length<3? <div></div>: <span>showing results {startIndex+1}:{Math.min(EndIndex,results.length)}: {EndIndex},{pagnationLength}</span>}
       </FlexRow>
    
 
       <div className='search-results'>
-        {searchText===undefined? <div>Search for an Emoji</div>: searchText.length<3? <div>Be more specific Please</div>: 
+        {searchText===undefined? <div>Search for an Emoji</div>: searchText.length<3? <div>Be more specific Please</div>:
         results.slice(startIndex,EndIndex)
         .map((item,index)=>(<div key={uuidv4()}><EmojiItem  item={item} index={index} pathname={pathname}/></div> ))}
       </div>

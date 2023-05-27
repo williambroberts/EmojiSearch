@@ -12,13 +12,13 @@ const CategoriesItem = ({text,hex,index,emoji}) => {
     // },[])
    
   return (
-    <div className='categories-item'>
+    <Link className='categories-item' href={`/categories/${index}`}>
         <span className={`categories-item-icon${index}`}></span>
 
         <span className={noto.className} id={`categories-item-icon-noto${index}`}>{emoji}</span>
         <span className="categories-item-text">{text}</span>
         <Link href={`/categories/${index}`} className='categories-item-link'>view all</Link>
-    </div>
+    </Link>
   )
 }
 

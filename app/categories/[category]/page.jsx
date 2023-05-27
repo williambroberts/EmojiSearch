@@ -20,10 +20,10 @@ const IndividualcategoryPage = ({params: {category}}) => {
   }
   return (
     <main>
-    <Title text={categories[category].category}/> 
+    <Title text={categories[category].category} margin={"1rem 0 1rem 0"}/> 
      
       <BackButton/>
-     <button onClick={()=>handleClearViews()}>clear recent</button>
+     {/* <span onClick={()=>handleClearViews()} className=''>clear recent</span> */}
       <div className='category-grid'>
       {emojis.filter((item,index)=> item.category===categories[category].category).map((item,index)=> (<EmojiItem key={uuidv4()} item={item} index={index} pathname={pathname}/> ) )}
       </div>

@@ -4,12 +4,16 @@
     cursor: pointer;
     font-weight: 400;
     color: var(--t-2);
-    background-color: var(--bg-2);
+    background-color: var(--bg-3);
     text-decoration: none;
     width: min-content;
     padding: 0.25rem 0.5rem;
+    border-radius: 8px;
+    transition: var(--transition-1);
 }
-
+.back-button:hover {
+    background-color: var(--bg-4);
+}
 .flex-col {
     display: flex;
     align-items: center;

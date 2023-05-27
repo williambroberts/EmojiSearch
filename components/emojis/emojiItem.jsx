@@ -145,7 +145,7 @@ const EmojiItem = ({item,pathname,index}) => {
     
   }
   return (
-    <div className='emoji-item'>
+    <div className='emoji-item' style={{borderColor:`${clicked? "var(--skyblue)": ""}`,backgroundColor:`${clicked? "var(--lightskyblue)": ""}`}}>
       <button className='emoji-item-favourite' onClick={()=>handleFav()} disabled={user===null? true: false}
       
       >{isAFav? <Icon218StarFull/>:<Icon216StarEmpty/>}</button>
