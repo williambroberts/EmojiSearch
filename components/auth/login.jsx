@@ -3,6 +3,7 @@ import React,{useState} from 'react'
 import LogIn from '@/firebase/auth/loginFunc'
 import { useRouter } from 'next/navigation' 
 import Link from 'next/link'
+import Title from '../setup/title'
 const LoginForm = () => {
     const [email,setEmail]=useState()
     const [password,setPassword]=useState()
@@ -24,7 +25,8 @@ const LoginForm = () => {
     }
   return (
     <div>
-        <form onSubmit={(e)=>handleSubmit(e)}>
+        <Title text={"Log in to EmojiSearch"}/>
+        <form onSubmit={(e)=>handleSubmit(e)} className='auth-form'>
 
             <label  htmlFor='login-email' className='form-label'>Email</label>
             <input type='email' name="login-email" placeholder='Email'  required onChange={(e)=>setEmail(e.target.value)}/>

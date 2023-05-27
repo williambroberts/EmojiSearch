@@ -46,3 +46,9 @@
     justify-content: flex-start;
     align-items: center;
 }
+
+.filler {
+    display: inline-block;
+    width: 1rem;
+    height: auto;
+}
