@@ -19,7 +19,14 @@ const SignUpForm = () => {
             console.log("change here will error on sign up")
             return
         }else {
-            console.log(result.user.uid,"here will" ,Object.keys(result.user))
+            try {
+                setDoc(doc(firestore, 'favorites', email), {
+                    emojis: [],
+                  });
+               }catch (err){
+                console.log(err,"err")
+              }
+
             router.push("/favorites")
             return
         }

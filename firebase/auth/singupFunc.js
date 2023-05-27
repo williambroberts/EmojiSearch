@@ -11,16 +11,10 @@ export default async function signUpWithEmailAndPassword(email, password) {
     let  error = null
     try {
         result = await createUserWithEmailAndPassword(auth, email, password);
-        const myStore = collection(firestore,"favorites")
-       console.log("signup",result.user.uid)
-       let data = {email:[]}
-       try {
-        setDoc(doc(firestore, 'favorites', email), {
-            emojis: [],
-          });
-       }catch (err){
-        console.log(err,"err")
-      }
+       
+       
+       
+       
     } catch (err) {
         error = err;
     }

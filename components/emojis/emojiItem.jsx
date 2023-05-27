@@ -2,7 +2,7 @@
 import React, {useContext, useEffect, useState} from 'react'
 import { v4 as uuidv4 } from 'uuid';
 import { Noto_Color_Emoji } from 'next/font/google'
-import { addDoc, collection, setDoc, deleteDoc, doc, query, onSnapshot } from "firebase/firestore";
+import { addDoc, collection, setDoc, deleteDoc, doc, query, onSnapshot,updateDoc,runTransaction,arrayUnion } from "firebase/firestore";
 import { getAuth } from 'firebase/auth';
 import firebase_app, { firestore } from '@/firebase/config';
 const noto = Noto_Color_Emoji({subsets:["emoji"],weight:["400"]})
@@ -82,20 +82,36 @@ const EmojiItem = ({item,pathname,index}) => {
   }
 
   const handleFav =async ()=>{
-
+    const userFavRef = doc(firestore, 'favorites', user.email);
+    const data= await {emojis:[item]}
+   
+    // try {
+    //   await runTransaction(firestore, async (transaction) => {
+    //     const docSnapshot = await transaction.get(userFavRef);
+    //    const currentFavs = [...docSnapshot.data().emojis]
+    //     console.log(currentFavs)
+    //   if (currentFavs.includes(item)){
+    //     console.log("already a favorite")
+    //   }
+    //   const updatedFavorites = [...currentFavs,null]
+    //   transaction.update(userFavRef, { emojis: updatedFavorites })
+        
+    //   })
+  
+      
+    // } catch (error) {
+    //   console.error('Error adding item to favorites: ', error);
+    // }
+  
     
-    // set this to fav in users list if not already
-    const myStore = collection(firestore, "favorites")
-    console.log("fav!!",user.uid,myStore)
-    let data = {
-       emoji:item.emoji
-    }
     try {
-      //addDoc(myStore, data)
-      setDoc(doc(firestore, 'favorites',user.uid),data)
+      await updateDoc(userFavRef,{ emojis: arrayUnion(item)})
+      console.log("added")
+       
     }catch (err){
-      console.log(err,"err")
+      console.log(err)
     }
+    
   }
   return (
     <div className='emoji-item'>
