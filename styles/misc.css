@@ -44,6 +44,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 }
 
 .recent-container {
@@ -58,4 +59,15 @@
     display: inline-block;
     width: 1rem;
     height: auto;
+}
+
+.recent-button {
+    margin: 1rem 0rem;
+    border: 1px solid transparent;
+padding: 0.5rem 1rem;
+border-radius: 0.5rem;
+color: var(--t-1);
+background-color: var(--yellow2);
+cursor:pointer;
+
 }

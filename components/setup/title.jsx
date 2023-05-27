@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Title = ({text}) => {
+const Title = ({text,margin}) => {
   return (
     
-         <h3 className='title'>{text}</h3>
+         <h3 className='title' style={{margin:margin}}>{text}</h3>
     
   )
 }

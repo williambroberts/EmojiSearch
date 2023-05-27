@@ -146,7 +146,9 @@ const EmojiItem = ({item,pathname,index}) => {
   }
   return (
     <div className='emoji-item'>
-      <button className='emoji-item-favourite' onClick={()=>handleFav()} disabled={user===null? true: false}>{isAFav? <Icon218StarFull/>:<Icon216StarEmpty/>}</button>
+      <button className='emoji-item-favourite' onClick={()=>handleFav()} disabled={user===null? true: false}
+      
+      >{isAFav? <Icon218StarFull/>:<Icon216StarEmpty/>}</button>
       
       <FlexRow justifyContent={"center"}>
         <span className={`${noto.className} emoji-item-emoji `}>{item.emoji}</span>

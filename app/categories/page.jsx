@@ -10,18 +10,18 @@ import Title from '@/components/setup/title';
 const CaterogiesPage = () => {
     const [searchInput,setSearchInput]=useState()
 
-  console.log(categories[0].category,searchInput)
+  // console.log(categories[0].category,searchInput)
   return (
    <main id="categories-main">
     {/* search bar */}
     {/* order by ?? */}
-  
-    <Title text={"Categories"}/>
+    
+    <Title text={"Categories"} margin={"1rem 0 0 0"}/>
    <input className='search-input' placeholder='Search Categories'
     type="text" value={searchInput} name="categories-search" onChange={(e)=>setSearchInput(e.target.value.toLowerCase())}/>
     <div className='categories-container'>
       {searchInput===undefined? categories.map((item,index)=>( 
-        <CategoriesItem hex={item.hex} key={uuidv4()} text={item.category} index={index}/>))
+        <CategoriesItem hex={item.hex} key={uuidv4()} text={item.category} index={index} emoji={item.emoji}/>))
       :categories.filter((item)=>item.category.toLowerCase().includes(searchInput)).map((item,index)=>( 
         <CategoriesItem hex={item.hex} key={uuidv4()} text={item.category}  emoji={item.emoji} index={index}/>
       )

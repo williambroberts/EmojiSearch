@@ -5,7 +5,7 @@ const noto = Noto_Color_Emoji({subsets:["emoji"],weight:["400"]})
 
 import Link from 'next/link'
 const CategoriesItem = ({text,hex,index,emoji}) => {
-
+  console.log(text,emoji,index)
     // useEffect(()=>{
     //   document.querySelector(`.categories-item-icon${index}`).innerHTML=`${hex}`
     //   document.querySelector(`#categories-item-icon-noto${index}`).innerHTML=`${hex}`

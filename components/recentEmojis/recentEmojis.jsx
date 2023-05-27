@@ -5,6 +5,8 @@ import { v4 as uuidv4 } from 'uuid';
 import { usePathname } from 'next/navigation';
 import EmojiItem from '../emojis/emojiItem';
 import Title from '../setup/title';
+import { Inter } from 'next/font/google';
+const inter = Inter({subsets:["latin"]})
 const RecentEmojis = () => {
     const pathname = usePathname()
     const {recentlyViewedEmojisListLength,setRecentlyViewedEmojisListLength,hasChanged,setHasChanged}=useContext(recentlyViewedEmojiContext)
@@ -44,8 +46,8 @@ const RecentEmojis = () => {
       // setRecentEmojis([])
     },[])
   return (<div className='recent-container'>
-    <Title text={"Recent Emojis"}/>
-    <button onClick={()=>handleClearViews()}>clear recent</button>
+    <Title text={"Recent Emojis"} margin={"1rem 0 0 0"}/>
+    <button onClick={()=>handleClearViews()} className='recent-button'><span className={inter.className}>Clear recent</span></button>
     <div className='category-grid'>
         {RecentEmojis.map((item,index)=> (<EmojiItem key={uuidv4()} item={item} index={index} pathname={pathname}/> ))}
     </div>
