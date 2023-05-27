@@ -71,7 +71,9 @@
     justify-content: center;
 
 }
-
+.emoji-item-favourite {
+    color: var(--yellow2);
+}
 .emoji-item-open {
     cursor: pointer;
     padding: 8px 12px;

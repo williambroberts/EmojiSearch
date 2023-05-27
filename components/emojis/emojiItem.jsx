@@ -22,6 +22,7 @@ const EmojiItem = ({item,pathname,index}) => {
   const [toOpen,setToOpen]=useState(false)
   const [currentUserFavs,setCurrentUseFavs]=useState(null)
   const [emojiStar,setEmojiStar]=useState(<Icon216StarEmpty/>)
+  const [isAFav,setIsAFav]=useState(false)
   const handleCopy = ()=>{
     navigator.clipboard.writeText(item.emoji)
     setClicked((prev)=> {return !prev})
@@ -34,10 +35,10 @@ const EmojiItem = ({item,pathname,index}) => {
 
   for (let emoji of usersFavs) {
     if(emoji.name===item.name){
-      setEmojiStar((prev)=><Icon218StarFull/>)
+      setIsAFav(true)
       break
     }else {
-      setEmojiStar(<Icon216StarEmpty/>)
+      setIsAFav(false)
     }
   }
   console.log("chane",usersFavs)
@@ -96,33 +97,40 @@ const EmojiItem = ({item,pathname,index}) => {
    
     }
   }
-
-  const handleFav =async ()=>{
+  const handdleDeleteFav = async ()=>{
     const userFavRef = doc(firestore, 'favorites', user?.email);
-    //const data= await {emojis:[item]}
-  
-    // try {
-    //   await runTransaction(firestore, async (transaction) => {
-    //     const docSnapshot = await transaction.get(userFavRef);
-    //    const currentFavs = [...docSnapshot.data().emojis]
-    //     console.log(currentFavs)
-    //   if (currentFavs.includes(item)){
-    //     console.log("already a favorite")
-    //   }
-    //   const updatedFavorites = [...currentFavs,null]
-    //   transaction.update(userFavRef, { emojis: updatedFavorites })
-        
-    //   })
+ try {
+      await runTransaction(firestore, async (transaction) => {
+        const docSnapshot = await transaction.get(userFavRef);
+       const currentFavs = [...docSnapshot.data().emojis]
+        console.log(currentFavs)
+     
+      let updatedFavorites = currentFavs.filter((emoji,index)=>emoji.name!==item.name)
+      transaction.update(userFavRef, { emojis: updatedFavorites })
+       console.log("deleted that emoji",item.emoji) 
+      })
   
       
-    // } catch (error) {
-    //   console.error('Error adding item to favorites: ', error);
-    // }
+    } catch (error) {
+      console.error('Error deleting emoji: ', error);
+    }
+  }
+  const handleFav =async ()=>{
+    if (isAFav){
+      handdleDeleteFav()
+      return
+    }
+      
+    
+    const userFavRef = doc(firestore, 'favorites', user?.email);
+    
+  
+   
   
     
     try {
       await updateDoc(userFavRef,{ emojis: arrayUnion(item)})
-      console.log("added")
+      console.log("added emoji ")
        
     }catch (err){
       console.log(err)
@@ -131,7 +139,7 @@ const EmojiItem = ({item,pathname,index}) => {
   }
   return (
     <div className='emoji-item'>
-      <button className='emoji-item-favorite' onClick={()=>handleFav()} disabled={user===null? true: false}>{emojiStar}</button>
+      <button className='emoji-item-favourite' onClick={()=>handleFav()} disabled={user===null? true: false}>{isAFav? <Icon218StarFull/>:<Icon216StarEmpty/>}</button>
       
       <FlexRow>
         <span className={`${noto.className} emoji-item-emoji `}>{item.emoji}</span>
