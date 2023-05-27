@@ -17,10 +17,16 @@ const RecentEmojis = () => {
         setRecentEmojis([])
       }
     useEffect(()=>{
+
         console.log(hasChanged)
-        const emojiListSTring = localStorage.getItem("emojiList")
+        try {
+          const emojiListSTring = localStorage.getItem("emojiList")
         let emojiList = JSON.parse(emojiListSTring)
         setRecentEmojis([...emojiList])
+        }catch(err){
+          console.log(err)
+        }
+        
     },[hasChanged])
   return (<div className='recent-container'>
     <Title text={"Recent Emojis"}/>

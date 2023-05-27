@@ -4,6 +4,7 @@ import "../styles/header.css"
 import "../styles/misc.css"
 import "../styles/categories.css"
 import "../styles/search.css"
+import "../styles/auth.css"
 import { Inter } from 'next/font/google'
 import ProviderForTheme from '@/components/theme/themeProvider'
 import Footer from '@/components/footer/footer'

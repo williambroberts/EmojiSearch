@@ -8,7 +8,7 @@ export default function Home() {
    <main>
      {/* show recent */}
      {/* show faves */}
-     <RecentEmojis/>
+     {/* <RecentEmojis/> */}
    </main>
   )
 }
