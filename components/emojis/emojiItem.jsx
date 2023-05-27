@@ -52,8 +52,8 @@ const EmojiItem = ({item,pathname,index}) => {
   // },[toOpen])
 
   const OpenModal = ()=>{
-  // setToOpen((prev)=>!prev)
-    // setRecentlyViewedEmojisListLength((prev)=>prev+1)
+ 
+   
     let myDialog = document.querySelector(`#emoji-modal${index}`)
     console.log(myDialog)
     myDialog.showModal()

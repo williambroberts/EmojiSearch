@@ -28,6 +28,13 @@ const RecentEmojis = () => {
         }
         
     },[hasChanged])
+
+    useEffect(()=>{
+      localStorage.setItem("emojiList",JSON.stringify([]))
+      setRecentlyViewedEmojisListLength(0)
+     
+      setRecentEmojis([])
+    },[])
   return (<div className='recent-container'>
     <Title text={"Recent Emojis"}/>
     <button onClick={()=>handleClearViews()}>clear recent</button>
