@@ -140,7 +140,7 @@ const SearchPage = () => {
       <div className='search-results'>
         {searchText===undefined? <div>Search for an Emoji</div>: searchText.length<3? <div>Be more specific Please</div>: 
         results.slice(startIndex,EndIndex)
-        .map((item,index)=>(<div ><EmojiItem key={uuidv4()} item={item} index={index} pathname={pathname}/></div> ))}
+        .map((item,index)=>(<div key={uuidv4()}><EmojiItem  item={item} index={index} pathname={pathname}/></div> ))}
       </div>
    
     </main> 

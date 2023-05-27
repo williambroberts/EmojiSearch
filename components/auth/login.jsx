@@ -33,7 +33,7 @@ const LoginForm = () => {
             <button type='submit'>Login</button>
         </form>
         <span>
-           Don't have an account?
+           Don&apos;t have an account?
             <Link href={"/signup"}>Sign up</Link>
         </span>
     </div>
@@ -41,3 +41,5 @@ const LoginForm = () => {
 }
 
 export default LoginForm
+
+// Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.

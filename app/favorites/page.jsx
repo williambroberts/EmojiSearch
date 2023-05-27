@@ -14,7 +14,7 @@ const FavoritesPage = () => {
       return
     }
     
-  },[user])
+  },[user,router])
   return (
    <main>
     Favorites {user===null? "null" :user.email}
