@@ -36,7 +36,14 @@
 
 .theme-button {
     box-sizing:border-box;
-    
+    border: none;
+    font-size: var(--font-size-16);
+    color: var(--t-1);
+    background-color: transparent;
+    padding: 4px 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .recent-container {

@@ -32,7 +32,8 @@ const EmojiItem = ({item,pathname,index}) => {
   }
  useEffect(()=>{
   setCurrentUseFavs((prev)=>{return usersFavs})
-  try {
+  if (user!==null){
+    try {
     for (let emoji of usersFavs) {
     if(emoji.name===item.name){
       setIsAFav(true)
@@ -44,6 +45,8 @@ const EmojiItem = ({item,pathname,index}) => {
   }catch (err){
     console.log(err)
   }
+  }
+  
   
   // console.log("chane",usersFavs)
  },[usersFavs])
