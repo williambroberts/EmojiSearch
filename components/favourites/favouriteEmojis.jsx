@@ -30,12 +30,13 @@ const FavouriteEmojisComponent = () => {
     }
   return (
     <div className='recent-container'>
-        <Title text={"Your Favourite Emojis"}/>
-        <FlexRow>
-            <button onClick={()=>handlePrev()} className='prev-button'>prev</button>
-            <span>You have {favourites===[]? "": favourites?.length} favourites</span>
-            <span> Showing favorites {startIndex}:{endIndex}</span>
-            <button onClick={()=>handleNext()} className='next-button'>next</button>
+        <Title text={"⭐ Your Favourite Emojis ⭐"} margin={"1rem 0rem"}/>
+        <span className='favourite-span'>You have <strong>{favourites===[]? "": favourites?.length}</strong> favourites</span>
+        <FlexRow gap={"1rem"}>
+            <span onClick={()=>handlePrev()} className='prev-button'>prev</span>
+           
+            <span className='favourite-span'> Showing favorites {startIndex}:{endIndex}</span>
+            <span onClick={()=>handleNext()} className='next-button'>next</span>
         </FlexRow>
     <div className='category-grid'>
         {favourites?.slice(startIndex,endIndex).map((item,index)=> (<EmojiItem key={uuidv4()} item={item} index={index} pathname={pathname}/> ))}

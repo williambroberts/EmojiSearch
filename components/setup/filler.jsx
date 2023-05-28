@@ -1,8 +1,8 @@
 import React from 'react'
 
-const Filler = ({width}) => {
+const Filler = ({width,height}) => {
   return (
-    <div style={{width:width}} className='filler'></div>
+    <div style={{width:width,height:height}} className='filler'></div>
   )
 }
 

@@ -24,6 +24,7 @@ const EmojiItem = ({item,pathname,index}) => {
   const [emojiStar,setEmojiStar]=useState(<Icon216StarEmpty/>)
   const [isAFav,setIsAFav]=useState(false)
   const [isARecent,setIsARecent]=useState(false)
+  const [isAlert,setIsAlert]=useState(false)
   const handleCopy = ()=>{
     navigator.clipboard.writeText(item.emoji)
     setClicked((prev)=> {return !prev})
@@ -122,6 +123,15 @@ const EmojiItem = ({item,pathname,index}) => {
     }
   }
   const handleFav =async ()=>{
+    if (user===null){
+      let myAlert = document.querySelector(`#alert-fav${index}`)
+     console.log(myAlert)
+     myAlert.style.display="flex"
+      setTimeout(()=>{
+        myAlert.style.display="none"
+      },3000)
+      return
+    }
     if (isAFav){
       handdleDeleteFav()
       return
@@ -161,9 +171,9 @@ const EmojiItem = ({item,pathname,index}) => {
     }
   },[hasChanged])
   return (
-    <div className='emoji-item' style={{borderColor:`${clicked? "var(--skyblue)": isARecent? "var(--palegreen)" :""}`,backgroundColor:`${clicked? "var(--lightskyblue)":isARecent? "var(--verypalegreen)": ""}`}}>
-      <button className='emoji-item-favourite' onClick={()=>handleFav()} disabled={user===null? true: false}
-      
+    <div className='emoji-item' style={{borderColor:`${clicked? "var(--red)":isAFav? "var(--yellow2)": isARecent? "var(--skyblue)" :""}`,backgroundColor:`${clicked? "var(--verypalered)":isAFav? "var(--verypaleyellow2)": isARecent? "var(--lightskyblue)": ""}`}}>
+      <button className='emoji-item-favourite' onClick={()=>handleFav()} disabled={user===null? false: false}
+     
       >{isAFav? <Icon218StarFull/>:<Icon216StarEmpty/>}</button>
       
       <FlexRow justifyContent={"center"}>
@@ -190,6 +200,9 @@ const EmojiItem = ({item,pathname,index}) => {
       <EmojiModal closeModal={closeModal} item={item}/>
      </dialog>
 
+    <div className={`alert`} id={`alert-fav${index}`}>
+    🥗 <strong>Please sigh up to favourite this emoji</strong>
+       </div>
     </div>
   )
 }

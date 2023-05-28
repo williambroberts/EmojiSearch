@@ -141,3 +141,11 @@
         align-items: center;
     }
 }
+
+.logout-button {
+    color: var(--blue2);
+    font-size: inherit;
+    font-weight: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}

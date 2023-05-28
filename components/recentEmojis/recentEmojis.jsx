@@ -48,7 +48,7 @@ const RecentEmojis = () => {
       // setRecentEmojis([])
     },[])
   return (<div className='recent-container'>
-    <Title text={"Recent Emojis"} margin={"1rem 0 0 0"}/>
+    <Title text={"Recently Viewed"} margin={"1rem 0 0 0"}/>
     <button onClick={()=>handleClearViews()} className='recent-button'><span className={inter.className}>Clear recent</span></button>
     <div className='category-grid'>
         {RecentEmojis.map((item,index)=> (<EmojiItem key={uuidv4()} item={item} index={index} pathname={pathname}/> ))}

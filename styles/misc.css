@@ -49,6 +49,7 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    margin: 0rem 1rem;
 }
 
 .recent-container {
@@ -88,4 +89,18 @@ font-weight:500;
     color: var(--blue2);
     text-decoration: none;
     font-size: inherit;
+}
+
+.home-link-item {
+    text-decoration: none;
+    color: var(--blue2);
+    font-size: var(--font-size-16);
+    font-weight: 400;
+}
+
+.h4 {
+    margin: 1rem 0rem;
+    color: var(--t-1);
+    font-weight: 600;
+    font-size: var(--font-size-24);
 }
