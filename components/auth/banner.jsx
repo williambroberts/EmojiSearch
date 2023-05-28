@@ -18,7 +18,14 @@ const Banner = ({name}) => {
              <Title text={"Welcome"}/>
              <Filler width={"2px"}/>
             <Title text={name}/>
+            
         </FlexRow>
+        <div className='banner-emoji-container'>
+            <span className={`${noto.className} banner-item-emoji`}>🐫</span>
+            <span className={`${noto.className} banner-item-emoji`}>🥳</span>
+            <span className={`${noto.className} banner-item-emoji`}>🗡️</span>
+            {/* <span className='banner-item-emoji'>🥳🐫</span> */}
+       </div> 
         <div className='banner-emoji-container'>
             <span className={`${noto.className} banner-item-emoji`}>🎉</span>
             <span className={`${noto.className} banner-item-emoji`}>🏕️</span>

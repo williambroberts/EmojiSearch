@@ -6,6 +6,7 @@
     flex-direction: column;
     padding:3rem;
     box-sizing: border-box;
+    align-items: center;
 }
 
 .auth-input {
@@ -41,9 +42,10 @@
 .emoji-title {
     font-weight: 500;
     font-size: var(--font-size-24);
-    margin: 1rem 0rem;
-    width: auto;
+    padding: 1rem 0rem;
+    width: 100%;
     background-color: var(--bg-3);
+    text-align: center;
 }
 .auth-main {
     display: grid;
