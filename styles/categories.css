@@ -101,6 +101,10 @@
     gap: 0.125rem;
     cursor: pointer;
 }
+.emoji-item-copy > span {
+    color: var(--t-1);
+    font-size: inherit;
+}
 .copy-span {
     width: 60px;
     display: flex;
@@ -344,5 +348,6 @@
     border-left: 3px solid var(--red);
     border-right: 3px solid var(--palegreen);
     z-index: 1;
+    color: var(--t-1);
 
 }   
