@@ -29,8 +29,8 @@ export default function Home() {
      <Link href={"/signup"} className='common-link'>Make an account</Link> and save your favourite emojis for later! Don&apos;t fancy that, no matter, your recently viewed emojis will be kepy for you automatically!
      </Intro>
      <FlexRow gap={"1rem"}>
-      <HomeLinkItem text={"Categories"} link={"/categories 📑"} icon={""}/>
-      <HomeLinkItem text={"Search all"} link={"/search 🔎"} icon={""}/>
+      <HomeLinkItem text={"Categories 📑"} link={"/categories"} icon={""}/>
+      <HomeLinkItem text={"Search all 🔎"} link={"/search"} icon={""}/>
      
      </FlexRow>
      <PopularEmojisComponent/>

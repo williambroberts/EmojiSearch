@@ -10,7 +10,7 @@
 }
 
 .auth-input {
-    min-width:80%;
+    width:80%;
     background-color: var(--bg-2);
     display: inline-block;
     border-radius: 0.5rem;
@@ -21,6 +21,7 @@
     box-sizing: border-box;
     font-size: var(--font-size-14);
     outline:2px solid transparent;
+    max-width:560px ;
 }
 .auth-input:hover {
     background-color: var(--bg-1);

@@ -2,12 +2,15 @@
 import React, { useContext } from 'react'
 import FlexCol from '../setup/flexCol'
 import HamburgerItem from './hamburgerItem'
+import { Caveat } from 'next/font/google'
 import { IsAUserLoggedInContext } from '@/contexts/authContext'
+const caveat = Caveat({subsets:["cyrillic"],weight:["400","500","600"]})
 const Hamburger = ({setIsHamburger,isHamburger}) => {
   const {user} = useContext(IsAUserLoggedInContext)
   return (
     <div className={`hamburger ${isHamburger? "open":""} `}>
-        <FlexCol>
+        <FlexCol width={"100%"} gap={"0.5rem"} align={"flex-start"}>
+        <h3 className={`${caveat.className} emoji-hamburger-title`}> 🧭 EmojiSearch 🌮</h3>
           <HamburgerItem link={"/"} text={"Home"} icon={""} setIsHamburger={setIsHamburger}/>
           <HamburgerItem link={"/categories"} text={"Categories"} icon={""} setIsHamburger={setIsHamburger}/>
           <HamburgerItem link={"/search"} text={"Search"} icon={""} setIsHamburger={setIsHamburger}/>

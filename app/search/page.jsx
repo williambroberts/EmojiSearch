@@ -113,14 +113,10 @@ const SearchPage = () => {
   return (
     <main>
      <div className='search-header'>
-      <Title text={"Emoji Search"} margin={"1rem 0 0 0"}/>
+      <Title text={"Emoji Search 🔎"} margin={"1rem 0 0 0"}/>
       <input className='search-input'
       type='text' placeholder='Search for an Emoji' value={searchText} onChange={(e)=>handleSearch(e)}/>
-      {/* <FlexRow>
-        <span className='prev-button' onClick={()=>handlePrev()} disabled={isDisabled}>prev</span>
-      <input type='number' min="1" max="50" name='results-length' value={pagnationLength} onInput={(e)=>handlePagnation(parseInt(e.target.value))}/>
-      <span className='next-button' onClick={()=>handleNext()} disabled={isDisabled}>Next</span>
-      </FlexRow> */}
+     
       <FlexRow gap={"1rem"}>
       <span className='prev-button' onClick={()=>handlePrev()} disabled={isDisabled}>prev</span>
         <label htmlFor='checkbox5' className='search-checkbox-label'>
