@@ -6,6 +6,7 @@ footer.footer {
     padding: 1rem;
     background-color: var(--bg-1);
     border-top: 1px solid var(--bg-4);
+    /* box-shadow: var(--box-shadow-1inset); */
 
 }
 .footer-nav {
