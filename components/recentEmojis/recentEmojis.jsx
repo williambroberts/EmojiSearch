@@ -23,15 +23,17 @@ const RecentEmojis = () => {
         console.log(hasChanged)
         try {
           const emojiListSTring = localStorage.getItem("emojiList")
+         // console.log(emojiListSTring,typeof(emojiListSTring))
           if (emojiListSTring===undefined){
             localStorage.setItem("emojiList",JSON.stringify([]))
             setRecentlyViewedEmojisListLength(0)
             //setHasChanged((prev)=>prev)
             setRecentEmojis([])
+            //console.log("made new list for locla emojis")
           }
 
         let emojiList = JSON.parse(emojiListSTring)
-        console.log(emojiList,emojiListSTring)
+        //console.log(emojiList,emojiListSTring)
         setRecentEmojis([...emojiList])
         }catch(err){
           console.log(err)

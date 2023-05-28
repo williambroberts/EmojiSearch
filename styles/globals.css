@@ -212,3 +212,32 @@
     justify-content: flex-start;
     flex: 1 1 auto;
   }
+
+  input[type="number"]{
+    border: 1px solid transparent;
+    outline: none;
+  }
+  input[type="number"]:focus{
+    border: 1px solid var(--blue2);
+  }
+
+  .intro {
+    color: var(--t-3);
+    font-size: var(--font-size-16);
+    font-weight: 400;
+    line-height: 1.5rem;
+    display: inline-block;
+    /* align-items: center; */
+    text-align: center;
+    max-width: 70ch;
+    white-space:break-spaces;
+    
+  }
+  .intro-span {
+    margin: 0rem 0.125rem;
+    color: var(--blue2);
+    text-decoration: underline;
+    font-size: inherit;
+    font-weight: 400;
+    display: inline;
+  }

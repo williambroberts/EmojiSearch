@@ -1,5 +1,5 @@
 .banner {
-    background-color: var(--verypalepink);
+    background-color: var(--bg-3);
     height: 100%;
     width: 500px;
     display: flex;
@@ -41,6 +41,7 @@
 .emoji-title {
     font-weight: 500;
     font-size: var(--font-size-24);
+    margin: 1rem 0rem;
 }
 .auth-main {
     display: grid;
@@ -58,8 +59,12 @@
     justify-content: center;
     cursor: pointer;
     border: none;
-    background: var(--yellow2);
+    background: var(--bg-3);
+    transition: var(--transition-1);
 
+}
+.auth-button:hover {
+    background-color: var(--bg-4);
 }
 .auth-button>span {
     display: flex;

@@ -23,6 +23,7 @@ const EmojiItem = ({item,pathname,index}) => {
   const [currentUserFavs,setCurrentUseFavs]=useState(null)
   const [emojiStar,setEmojiStar]=useState(<Icon216StarEmpty/>)
   const [isAFav,setIsAFav]=useState(false)
+  const [isARecent,setIsARecent]=useState(false)
   const handleCopy = ()=>{
     navigator.clipboard.writeText(item.emoji)
     setClicked((prev)=> {return !prev})
@@ -71,10 +72,8 @@ const EmojiItem = ({item,pathname,index}) => {
     }
      myDialog.close()
      setHasChanged((prev)=>!prev)
-    console.log(pathname,typeof(pathname))
-    if (pathname==="/"){
-      return
-    }else{
+    console.log(pathname,typeof(pathname),"ater reutrn")
+   
      
     
     let emojiToSave = emojis.filter((emoji,index)=>emoji.name===item.name)[0]
@@ -100,9 +99,9 @@ const EmojiItem = ({item,pathname,index}) => {
       let newEmojiList = [emojiToSave]
       localStorage.setItem("emojiList",JSON.stringify(newEmojiList))
     }
+   setIsARecent(true)
    
-   
-    }
+    
   }
   const handdleDeleteFav = async ()=>{
     const userFavRef = doc(firestore, 'favorites', user?.email);
@@ -144,8 +143,25 @@ const EmojiItem = ({item,pathname,index}) => {
     }
     
   }
+
+  useEffect(()=>{
+    try {
+      const emojiListSTring = localStorage.getItem("emojiList")
+      if (emojiListSTring!==undefined){
+        let emojiList = JSON.parse(emojiListSTring)
+        for (let emoji of emojiList){
+          if (emoji.name===item.name){
+            setIsARecent(true)
+          }
+        }
+      }
+       
+    }catch (err){
+      console.log(err)
+    }
+  },[hasChanged])
   return (
-    <div className='emoji-item' style={{borderColor:`${clicked? "var(--skyblue)": ""}`,backgroundColor:`${clicked? "var(--lightskyblue)": ""}`}}>
+    <div className='emoji-item' style={{borderColor:`${clicked? "var(--skyblue)": isARecent? "var(--palegreen)" :""}`,backgroundColor:`${clicked? "var(--lightskyblue)":isARecent? "var(--verypalegreen)": ""}`}}>
       <button className='emoji-item-favourite' onClick={()=>handleFav()} disabled={user===null? true: false}
       
       >{isAFav? <Icon218StarFull/>:<Icon216StarEmpty/>}</button>
