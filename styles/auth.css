@@ -46,6 +46,7 @@
     width: 100%;
     background-color: var(--bg-3);
     text-align: center;
+    color: var(--t-1);
 }
 .auth-main {
     display: grid;
