@@ -116,12 +116,13 @@ const SearchPage = () => {
       <Title text={"Emoji Search"} margin={"1rem 0 0 0"}/>
       <input className='search-input'
       type='text' placeholder='Search for an Emoji' value={searchText} onChange={(e)=>handleSearch(e)}/>
-      <FlexRow>
+      {/* <FlexRow>
         <span className='prev-button' onClick={()=>handlePrev()} disabled={isDisabled}>prev</span>
-      {/* <input type='number' min="1" max="50" name='results-length' value={pagnationLength} onInput={(e)=>handlePagnation(parseInt(e.target.value))}/> */}
+      <input type='number' min="1" max="50" name='results-length' value={pagnationLength} onInput={(e)=>handlePagnation(parseInt(e.target.value))}/>
       <span className='next-button' onClick={()=>handleNext()} disabled={isDisabled}>Next</span>
-      </FlexRow>
-      <FlexRow>
+      </FlexRow> */}
+      <FlexRow gap={"1rem"}>
+      <span className='prev-button' onClick={()=>handlePrev()} disabled={isDisabled}>prev</span>
         <label htmlFor='checkbox5' className='search-checkbox-label'>
 
             <input type='checkbox' checked={checked===5? true:false} name="checkbox5" onChange={(e)=>handleCheck(e)} className='search-checkbox5' />
@@ -139,16 +140,17 @@ const SearchPage = () => {
         <input type='checkbox' checked={checked===50? true:false} name="checkbox50" onChange={(e)=>handleCheck(e)} className='search-checkbox50'/>  
         <span className='search-checkbox-span50'>50</span>
        </label>
+       <span className='next-button' onClick={()=>handleNext()} disabled={isDisabled}>Next</span>
       </FlexRow>
       </div>
       <FlexRow>
-           <span>{disallowedSearched.includes(searchText)? <div></div>:searchText.length<3? <div></div>: `${results.length } Emojis found`} </span>
-           {results===undefined? "":searchText.length<3? <div></div>: <span>showing results {startIndex+1}:{Math.min(EndIndex,results.length)}: {EndIndex},{pagnationLength}</span>}
+           <span className='search-div'>{disallowedSearched.includes(searchText)? <div></div>:searchText.length<3? <div></div>: `${results.length } Emojis found`} </span>
+           {results===undefined? "":searchText.length<3? <div></div>: <span className='search-div'>showing results {startIndex+1}:{Math.min(EndIndex,results.length)}</span>}
       </FlexRow>
    
 
       <div className='search-results'>
-        {searchText===undefined? <div>Search for an Emoji</div>: searchText.length<3? <div>Be more specific Please</div>:
+        {searchText===undefined? <div className='search-div'>Search for an Emoji</div>: searchText.length<3? <div className='search-div'>Be more specific Please</div>:
         results.slice(startIndex,EndIndex)
         .map((item,index)=>(<div key={uuidv4()}><EmojiItem  item={item} index={index} pathname={pathname}/></div> ))}
       </div>

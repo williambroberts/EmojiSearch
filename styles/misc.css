@@ -71,7 +71,12 @@
 padding: 0.5rem 1rem;
 border-radius: 0.5rem;
 color: var(--t-1);
-background-color: var(--yellow2);
+background-color: var(--bg-3);
 cursor:pointer;
+transition: var(--transition-1);
 
+}
+
+.recent-button:hover {
+    background-color: var(--bg-4);
 }

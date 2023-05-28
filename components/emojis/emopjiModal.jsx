@@ -26,34 +26,35 @@ const EmojiModal = ({closeModal,item}) => {
         setCopyDecimal((prev)=> {return !prev})
         setTimeout(()=>{
           return setCopyDecimal((prev)=>{return !prev})
-        },2000)
+        },1000)
     }
     const handleCopyUnicode = ()=>{
         navigator.clipboard.writeText(item.unicode)
         setCopyUnicode((prev)=> {return !prev})
     setTimeout(()=>{
       return setCopyUnicode((prev)=>{return !prev})
-    },2000)
+    },1000)
     }
     const handleGetCode = () =>{
-        console.log("grdgrd")
+        //console.log("grdgrd")
         const myCode = `<span className={noto.className}>${item.html}</span>`
         navigator.clipboard.writeText(myCode)
         setGetCodeSnippet(true)
         setTimeout(()=>{
             setGetCodeSnippet(false)
-        },2000)
+        },1000)
     }
   return (
-    <div className='emoji-modal'>  
+    <div className='emoji-modal' style={{borderColor:`${copyUnicode? "var(--palegreen)" : copyDecimal? "var(--red)" : getCodeSnippet? "var(--yellow2)": ""}`,
+    backgroundColor:`${copyUnicode? "var(--verypalegreen)" : copyDecimal? "var(--verypalered)" : getCodeSnippet? "var(--verypaleyellow2)": ""}`}}>  
         <div className={isNoto? noto.className:"" } style={{fontSize:`${myFontSize}px`}}>{item.emoji}</div> 
         <span>Font size: {myFontSize}(px)</span>
-        <button className="emoji-modal-swap" onClick={()=>setIsNoto((prev)=>!prev)}>view {isNoto? "Standard":"Noto"} Emoji</button>
+        <span className="emoji-modal-swap" onClick={()=>setIsNoto((prev)=>!prev)}>view {isNoto? "Standard":"Noto"} Emoji</span>
         
        <FlexRow>
-        <button className='emoji-button-plus' onClick={()=>setMyFontSize((prev)=>prev>=200? prev:prev+1)}>+</button>
+        <span className='emoji-button-plus' onClick={()=>setMyFontSize((prev)=>prev>=200? prev:prev+1)}>+</span>
         <input type="number" min="1" max="200" value={myFontSize} onInput={(e)=>handleInput(e)}/>
-        <button className='emoji-button-minus'onClick={()=>setMyFontSize((prev)=>prev<=1? prev:prev-1)}>-</button>
+        <span className='emoji-button-minus'onClick={()=>setMyFontSize((prev)=>prev<=1? prev:prev-1)}>-</span>
        </FlexRow>
        <EmojiModalAttribute text={item.name} name={"Name"}/>
        <EmojiModalAttribute text={item.shortname} name={"Shortname"}/>
@@ -64,14 +65,14 @@ const EmojiModal = ({closeModal,item}) => {
         <FlexRow>
              <div className='emoji-modal-copy'  onClick={()=>handleCopyUnicode()}>
             <span><IconCopy/></span>
-            <span>{copyUnicode? "Copied":"Copy Unicode"}</span>
+            <span><strong>{copyUnicode? "Copied":"Copy Unicode"}</strong></span>
         </div>
         <div className='emoji-modal-copy' onClick={()=>handleCopyDecimal()}>
             <span><IconCopy/></span>
-            <span>{copyDecimal? "Copied":"Copy Decimal"}</span>
+            <span><strong>{copyDecimal? "Copied":"Copy Decimal"}</strong></span>
         </div>
         </FlexRow>
-        <span className='emoji-modal-getcode' onClick={()=>handleGetCode()}>{getCodeSnippet? "Copied, thank you":"Get Noto Code Snippet"}</span>
+        <span className='emoji-modal-getcode' onClick={()=>handleGetCode()}><strong>{getCodeSnippet? "Copied, thank you":"Get Noto Code Snippet"}</strong></span>
        
     </div>
   )
