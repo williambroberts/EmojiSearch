@@ -13,7 +13,7 @@ const Banner = ({name}) => {
     <div className='banner'>
         {/* emojisearch */}
         
-        <h3 className={`${caveat.className} emoji-title`}>EmojiSearch</h3>
+        <h3 className={`${caveat.className} emoji-title`}>EmojiSearch 🔎</h3>
         <FlexRow>
              <Title text={"Welcome"}/>
              <Filler width={"2px"}/>
