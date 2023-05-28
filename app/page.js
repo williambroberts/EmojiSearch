@@ -26,7 +26,7 @@ export default function Home() {
     or view it in different sizes!
      </Intro>
      <Intro margin={"1rem 0rem"}>
-     <Link href={"/signup"} className='common-link'>Make an account</Link> and save your favourite emojis for later! Don't fancy that, no matter, your recently viewed emojis will be kepy for you automatically!
+     <Link href={"/signup"} className='common-link'>Make an account</Link> and save your favourite emojis for later! Don&apos;t fancy that, no matter, your recently viewed emojis will be kepy for you automatically!
      </Intro>
      <FlexRow gap={"1rem"}>
       <HomeLinkItem text={"Categories"} link={"/categories 📑"} icon={""}/>
