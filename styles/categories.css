@@ -267,6 +267,7 @@
     transform: scale(1.8);
     z-index: 1;
     opacity: 0.0;
+    color:var(--t-1);
 
 }
 .search-checkbox-span50, .search-checkbox-span5, .search-checkbox-span10, .search-checkbox-span20 {
