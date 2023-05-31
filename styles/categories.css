@@ -278,6 +278,7 @@
     align-items: center;
     justify-content: center;
     border: 1px solid var(--t-4);
+    color:var(--t-1);
 
 }
 .search-checkbox5:checked ~ .search-checkbox-span5{
