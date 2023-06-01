@@ -9,13 +9,18 @@ const noto = Noto_Color_Emoji({subsets:["emoji"],weight:["400"]})
 import Link from 'next/link';
 import IconCopy from '../icons/action/copy';
 import EmojiModal from './emopjiModal';
+import { useRouter  } from 'next/navigation';
 import FlexRow from '../setup/flexRow';
 import { recentlyViewedEmojiContext } from '@/contexts/recent';
 import { IsAUserLoggedInContext } from '@/contexts/authContext';
 import emojis from "../../lib/emojis.json"
 import Icon216StarEmpty from '../icons/action/hollowStar';
 import Icon218StarFull from '../icons/action/star';
+import categories from "../../lib/categories.json"
 const EmojiItem = ({item,pathname,index}) => {
+  const router = useRouter()
+
+
   const {user,usersFavs}=useContext(IsAUserLoggedInContext)
   const {recentlyViewedEmojisListLength,setRecentlyViewedEmojisListLength,hasChanged,setHasChanged}=useContext(recentlyViewedEmojiContext)
   const [clicked,setClicked]=useState(false)
@@ -57,8 +62,28 @@ const EmojiItem = ({item,pathname,index}) => {
   // },[toOpen])
 
   const OpenModal = ()=>{
- 
-   
+    let screenWidth = window.innerWidth;
+    console.log(screenWidth,"screenwidth")
+    if (screenWidth<736){
+      console.log(item.category)
+      let categoryIndex
+      let emojiIndex
+      for (let i=0; i<categories.length; i++){
+        if (categories[i].category===item.category){
+          categoryIndex=i
+        }
+      }
+      for (let  i=0; i<emojis.length;i++){
+        if (emojis[i].html===item.html) {
+          emojiIndex=i
+        }
+      }
+      router.push(`/categories/${categoryIndex}/${emojiIndex}`)
+      return
+    }
+
+
+
     let myDialog = document.querySelector(`#emoji-modal${index}`)
     console.log(myDialog)
     myDialog.showModal()
@@ -81,12 +106,15 @@ const EmojiItem = ({item,pathname,index}) => {
     
     const emojiListSTring = localStorage.getItem("emojiList")
     let emojiList = JSON.parse(emojiListSTring)
-    for (let item of emojiList){
+    if (emojiList!==null){
+      for (let item of emojiList){
       if (item.name===emojiToSave.name){
         console.log("in already")
         return 
       }
     }
+    }
+    
      console.log("to save",emojiToSave)
     if (emojiList!==null){
 

@@ -30,7 +30,7 @@ export default function Home() {
      </Intro>
      <FlexRow gap={"1rem"}>
       <HomeLinkItem text={"Categories 📑"} link={"/categories"} icon={""}/>
-      <HomeLinkItem text={"Search all 🔎"} link={"/search"} icon={""}/>
+      <HomeLinkItem text={"Search all   "} link={"/search"} icon={""}/>
      
      </FlexRow>
      <PopularEmojisComponent/>
