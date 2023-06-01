@@ -9,7 +9,7 @@ const EmojiPageComponent = ({emoji}) => {
     console.log(theemoji)
     //console.log(emojis.filter((item)=>item.shortname.slice(1,item.shortname.length-1)===emoji.slice(3,emoji.length-3))[0])
   return (
-    <div>
+    <div className='emoji-page-item'>
         <BackButton/>
        {/* {emojis.filter((item)=>item.shortname.slice(1,item.shortname.length-1)===emoji.slice(3,emoji.length-3))[0].emoji} */}
      

@@ -359,3 +359,9 @@
     margin: 0rem 0.125rem;
 
 }  
+.emoji-page-item {
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    padding: 1rem 0.5rem;
+}
