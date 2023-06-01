@@ -4,10 +4,13 @@ import emojis from "../../lib/emojis.json"
 import BackButton from '../setup/buttons/backButton'
 import EmojiModalAttribute from './emojiModalAttribute'
 import FlexRow from '../setup/flexRow'
+import IconCopy from '../icons/action/copy'
+import { Noto_Color_Emoji } from 'next/font/google'
+const noto = Noto_Color_Emoji({subsets:["emoji"],weight:["400"]})
 const EmojiPageComponent = ({emoji}) => {
    
     console.log(emoji,"inner emoji page")
-    const theemoji = emojis.filter((item,index)=> index===parseInt(emoji))
+    const theemoji = emojis.filter((item,index)=> index===parseInt(emoji))[0]
     console.log(theemoji)
     const [copyUnicode,setCopyUnicode]=useState(false)
     const [copyDecimal,setCopyDecimal]=useState(false)

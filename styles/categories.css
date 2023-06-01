@@ -190,6 +190,7 @@
     padding: 4px 8px;
     box-sizing: border-box;
     width: 150px;
+    cursor: pointer;
 }
 
 .emoji-modal-swap {
@@ -205,6 +206,7 @@
     transition: var(--transition-1);
     width: 190px;
     justify-content: center;
+    cursor: pointer;
 }
 
 .emoji-button-plus {
@@ -218,6 +220,7 @@
     border-radius: 8px;
     margin: 0rem 0.25rem;
     transition: var(--transition-1);
+    cursor: pointer;
 }
 .emoji-button-minus {
     display: flex;
@@ -230,6 +233,7 @@
     border-radius: 8px;
     margin: 0rem 0.25rem;
     transition: var(--transition-1);
+    cursor: pointer;
 }
 
 .emoji-button-minus:hover, .emoji-button-plus:hover , .emoji-modal-swap:hover {
@@ -245,6 +249,7 @@
     padding: 4px 8px;
     box-sizing: border-box;
     width: 100%;
+    cursor: pointer;
     
 }
 .search-checkbox-label {
@@ -363,5 +368,9 @@
 }  
 
 .emoji-page-item {
-    
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 1rem;
+    padding:1rem 0rem;
 }
