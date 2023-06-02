@@ -1,3 +1,9 @@
+<!-- Built with -->
+### Built With
+  
+  - ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=React&logoColor=61DAFB)
+  <img src="https://img.shields.io/badge/Firebase-039BE5?style=for-the-badge&logo=Firebase&logoColor=white" /> 
+  <p align="right"><a href="#readme-top">back to top</a></p>
 <!-- QUESTIONS -->
   
 ## Questions ❔
