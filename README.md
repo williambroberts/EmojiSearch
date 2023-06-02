@@ -1,6 +1,6 @@
 <!-- QUESTIONS -->
   
-## Questions
+## Questions ❔
 
 If you have any questions, please reach out to me via socials or by sending an email to <a href="mailto:3williamroberts@gmail.com">3williamroberts@gmail.com</a>
 
