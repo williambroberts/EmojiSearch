@@ -1,6 +1,6 @@
 
   ### Description 👨‍💻
-  This is a fullstack emoji search website I built for searching and copying emojis into websites and projects. It uses firebase for the backend for a user to save their favourite emojis and Next js 13 for the front end. It is fully mobile responsive and has over 4,000 emojis to choose from. It allows google noto snippets to be copied into html code. 
+  This is a fullstack emoji search website I built for searching and copying emojis into websites and projects. It uses `firebase` for the backend for a user to save their favourite emojis and `Next.js 13`, for the front end. It is fully mobile responsive and has over 4,000 emojis to choose from. It allows google noto snippets to be copied into html code. 
   
    <p align="right"><a href="#readme-top">back to top</a></p>
 <!-- Built with -->
