@@ -141,7 +141,7 @@ const SearchPage = () => {
       </div>
       <FlexRow>
            <span className='search-div'>{disallowedSearched.includes(searchText)? <div></div>:searchText.length<3? <div></div>: <span><strong>{results.length }</strong> emojis found </span> }</span>
-           {results===undefined? "":searchText.length<3? <div></div>: <span className='search-div'>showing results <strong>{startIndex+1}</strong>:<strong>{Math.min(EndIndex,results.length)}</strong></span>}
+           {results===undefined? "":searchText.length<3? <div></div>:results?.length<1? <span className='search-div'></span> :<span className='search-div'>showing results <strong>{startIndex+1}</strong>:<strong>{Math.min(EndIndex,results.length)}</strong></span>}
       </FlexRow>
    
 
