@@ -9,18 +9,19 @@ import { Inter } from 'next/font/google';
 const inter = Inter({subsets:["latin"]})
 const RecentEmojis = () => {
     const pathname = usePathname()
-    const {recentlyViewedEmojisListLength,setRecentlyViewedEmojisListLength,hasChanged,setHasChanged}=useContext(recentlyViewedEmojiContext)
-    const [RecentEmojis,setRecentEmojis]=useState([])
+    const {RecentEmojis,setRecentEmojis,
+      recentlyViewedEmojisListLength,setRecentlyViewedEmojisListLength,hasChanged,setHasChanged}=useContext(recentlyViewedEmojiContext)
+    
     const handleClearViews = ()=>{
     
         localStorage.setItem("emojiList",JSON.stringify([]))
         setRecentlyViewedEmojisListLength(0)
-        //setHasChanged((prev)=>prev)
+        setHasChanged((prev)=>!prev)
         setRecentEmojis([])
       }
     useEffect(()=>{
 
-        console.log(hasChanged)
+        console.log(hasChanged,"clearing recent")
         try {
           const emojiListSTring = localStorage.getItem("emojiList")
          // console.log(emojiListSTring,typeof(emojiListSTring))

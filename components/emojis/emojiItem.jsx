@@ -22,7 +22,8 @@ const EmojiItem = ({item,pathname,index}) => {
 
 
   const {user,usersFavs}=useContext(IsAUserLoggedInContext)
-  const {recentlyViewedEmojisListLength,setRecentlyViewedEmojisListLength,hasChanged,setHasChanged}=useContext(recentlyViewedEmojiContext)
+  const {RecentEmojis,setRecentEmojis,
+    recentlyViewedEmojisListLength,setRecentlyViewedEmojisListLength,hasChanged,setHasChanged}=useContext(recentlyViewedEmojiContext)
   const [clicked,setClicked]=useState(false)
   const [toOpen,setToOpen]=useState(false)
   const [currentUserFavs,setCurrentUseFavs]=useState(null)
@@ -181,15 +182,19 @@ const EmojiItem = ({item,pathname,index}) => {
     }
     
   }
-
   useEffect(()=>{
     try {
-      const emojiListSTring = localStorage.getItem("emojiList")
-      if (emojiListSTring!==undefined){
-        let emojiList = JSON.parse(emojiListSTring)
-        for (let emoji of emojiList){
+        console.log("re evaluating recent")
+        setIsARecent(false)
+      if (RecentEmojis?.length>0){
+        
+        for (let emoji of RecentEmojis){
           if (emoji.name===item.name){
             setIsARecent(true)
+            console.log("its a recent",item.name,emoji.emoji,pathname)
+            break
+          }else{
+            setIsARecent(false)
           }
         }
       }
@@ -197,7 +202,30 @@ const EmojiItem = ({item,pathname,index}) => {
     }catch (err){
       console.log(err)
     }
-  },[hasChanged])
+
+  },[RecentEmojis])
+
+  // useEffect(()=>{
+  //   try {
+  //     const emojiListSTring = localStorage.getItem("emojiList")
+  //     if (emojiListSTring!==undefined){
+  //       let emojiList = JSON.parse(emojiListSTring)
+  //       for (let emoji of emojiList){
+  //         if (emoji.name===item.name){
+  //           setIsARecent(true)
+  //           console.log("its a recent",item.name,emoji.emoji,pathname)
+  //           break
+  //         }else{
+  //           setIsARecent(false)
+  //         }
+  //       }
+  //     }
+       
+  //   }catch (err){
+  //     console.log(err)
+  //   }
+  // },[hasChanged])
+  
   return (
     <div className='emoji-item' style={{borderColor:`${clicked? "var(--red)":isAFav? "var(--yellow2)": isARecent? "var(--skyblue)" :""}`,backgroundColor:`${clicked? "var(--verypalered)":isAFav? "var(--verypaleyellow2)": isARecent? "var(--lightskyblue)": ""}`}}>
       <button className='emoji-item-favourite' onClick={()=>handleFav()} disabled={user===null? false: false}

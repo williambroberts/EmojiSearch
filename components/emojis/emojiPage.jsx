@@ -1,5 +1,5 @@
 "use client"
-import React, {useState,useEffect} from 'react'
+import React, {useState,useEffect,useContext} from 'react'
 import emojis from "../../lib/emojis.json"
 import BackButton from '../setup/buttons/backButton'
 import EmojiModalAttribute from './emojiModalAttribute'
@@ -7,8 +7,9 @@ import FlexRow from '../setup/flexRow'
 import IconCopy from '../icons/action/copy'
 import { Noto_Color_Emoji } from 'next/font/google'
 const noto = Noto_Color_Emoji({subsets:["emoji"],weight:["400"]})
+import { recentlyViewedEmojiContext } from '@/contexts/recent'
 const EmojiPageComponent = ({emoji}) => {
-   
+    const {recentlyViewedEmojisListLength,setRecentlyViewedEmojisListLength,hasChanged,setHasChanged}=useContext(recentlyViewedEmojiContext)
     console.log(emoji,"inner emoji page")
     const theemoji = emojis.filter((item,index)=> index===parseInt(emoji))[0]
     console.log(theemoji)
@@ -50,6 +51,34 @@ const EmojiPageComponent = ({emoji}) => {
             setGetCodeSnippet(false)
         },1000)
     }
+
+    useEffect(()=>{
+        const localEmojiListJSON = localStorage.getItem("emojiList")
+        let emojiList = JSON.parse(localEmojiListJSON)
+        if (emojiList!==null){
+            for (let item of emojiList){
+            if (item.name===theemoji.name){
+              console.log("in already")
+              return 
+            }
+          }
+          }
+          
+           console.log("to save",theemoji)
+          if (emojiList!==null){
+      
+            console.log(emojiList.length)
+            if (emojiList.length>20){
+              emojiList=emojiList.slice(1)
+            }
+            let newEmojiList = [...emojiList,theemoji]
+            localStorage.setItem("emojiList",JSON.stringify(newEmojiList))
+          }else {
+            let newEmojiList = [theemoji]
+            localStorage.setItem("emojiList",JSON.stringify(newEmojiList))
+          }
+        setHasChanged((prev)=>prev)
+    },[])
   return (
     <div className='emoji-page-item'>
         <BackButton/>

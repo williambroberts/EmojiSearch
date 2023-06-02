@@ -5,6 +5,9 @@ const noto = Noto_Color_Emoji({subsets:["emoji"],weight:["400"]})
 const EmojiPage = ({params: {emoji}}) => {
   return (
     <main>
+      <div>
+        
+      </div>
     <EmojiPageComponent emoji={emoji}/>
     </main>
   )

@@ -4,9 +4,9 @@ export const recentlyViewedEmojiContext = createContext()
 const RecentViewedEmojisProvider = ({children}) => {
     const [recentlyViewedEmojisListLength,setRecentlyViewedEmojisListLength]=useState(0)
     const [hasChanged,setHasChanged]=useState(false)
-    
+    const [RecentEmojis,setRecentEmojis]=useState([])
   return (
-    <recentlyViewedEmojiContext.Provider value={{hasChanged,setHasChanged,
+    <recentlyViewedEmojiContext.Provider value={{hasChanged,setHasChanged,RecentEmojis,setRecentEmojis,
     recentlyViewedEmojisListLength,setRecentlyViewedEmojisListLength}}>
         {children}
     </recentlyViewedEmojiContext.Provider>
