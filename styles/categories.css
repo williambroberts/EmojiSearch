@@ -87,6 +87,7 @@
     flex-direction: column;
     border: 1px solid var(--bg-4);
     position: relative;
+    border-radius: 8px;
     width: var(--emoji-item-width);
     height:200px;
     transition: var(--transition-1);
