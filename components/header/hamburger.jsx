@@ -10,7 +10,7 @@ const Hamburger = ({setIsHamburger,isHamburger}) => {
   return (
     <div className={`hamburger ${isHamburger? "open":""} `}>
         <FlexCol width={"100%"} gap={"0.5rem"} align={"flex-start"}>
-        <h3 className={`${caveat.className} emoji-hamburger-title`}> 🧭 EmojiSearch 🌮</h3>
+        <h3 className={`${caveat.className} emoji-hamburger-title`}> EmojiSearch 🌮</h3>
           <HamburgerItem link={"/"} text={"Home"} icon={""} setIsHamburger={setIsHamburger}/>
           <HamburgerItem link={"/categories"} text={"Categories"} icon={""} setIsHamburger={setIsHamburger}/>
           <HamburgerItem link={"/search"} text={"Search"} icon={""} setIsHamburger={setIsHamburger}/>

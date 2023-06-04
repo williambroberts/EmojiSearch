@@ -37,6 +37,7 @@
     color: var(--t-1);
     font-weight: 400;
     font-size: var(--font-size-16);
+    margin: 0rem 1rem;
 }
 .header-item {
     display: none;
@@ -71,6 +72,7 @@ background-color: var(--bg-3);
   transition: all 0.13s ease-in-out ;
   box-sizing: border-box;
   padding: 2rem;
+  box-shadow: var(--box-shadow-2);
 }
 
 .hamburger.open {
@@ -95,4 +97,5 @@ background-color: var(--bg-3);
     color: var(--blue2);
     font-size: var(--font-size-16);
     text-decoration: none;
+    padding: 6px 12px;
 }

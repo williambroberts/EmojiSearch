@@ -1,6 +1,6 @@
 "use client"
 import Link from 'next/link'
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import ThemeButton from '../theme/themeButton'
 import Hamburger from './hamburger'
 import IsAUserLoggedInProvider, { IsAUserLoggedInContext } from '@/contexts/authContext'
@@ -8,6 +8,15 @@ import LogoutComponent from '../auth/logout'
 const Header = () => {
   const {user}=useContext(IsAUserLoggedInContext)
   const [isHamburger,setIsHamburger]=useState(false)
+
+  useEffect(()=>{
+    let htmlTag = document.querySelector('html')
+      if (isHamburger){
+        htmlTag.style.overflowY="hidden"
+      }else {
+        htmlTag.style.overflowY="scroll"
+      }
+  },[isHamburger])
   return (
    <header className='header'>
     <nav className='header-nav'>

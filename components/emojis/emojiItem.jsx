@@ -234,23 +234,23 @@ const EmojiItem = ({item,pathname,index}) => {
       
       <FlexRow justifyContent={"center"}>
         <span className={`${noto.className} emoji-item-emoji `}>{item.emoji}</span>
-        <span className='emoji-item-emoji'>{item.emoji}</span>
+        {/* <span className='emoji-item-emoji'>{item.emoji}</span> */}
       </FlexRow>
       
       {/* <span className='emoji-item-name'>{item.name}</span> */}
 
-      <FlexRow>
+      {/* <FlexRow> */}
 
       
      <span className='emoji-item-copy' onClick={()=>handleCopy()}>
-      <span><IconCopy/> </span>
+      {/* <span><IconCopy/> </span> */}
 
-     <span className='copy-span'><strong>{clicked? "Copied!": "Copy  "}</strong></span>
+     <span className='copy-span'><strong>{clicked? "Copied!": "Copy"}</strong></span>
     
      </span>
       {/* <span><Link href={`${pathname}/${item.shortname}`}>View</Link></span> */}
       <span className='emoji-item-open' onClick={()=>OpenModal()}><strong>view</strong></span>
-</FlexRow>
+{/* </FlexRow> */}
      <dialog id={`emoji-modal${index}`} className="emoji-dialog"
      onClick={(e)=>closeModal(e)}>
       <EmojiModal closeModal={closeModal} item={item}/>
