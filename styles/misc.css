@@ -104,3 +104,25 @@ font-weight:500;
     font-weight: 600;
     font-size: var(--font-size-24);
 }
+
+.scroll-top {
+    display: flex;
+    position: fixed;
+    bottom: 3.5rem;
+    right: 2rem;
+    padding:0.5rem;
+    box-shadow: var(--box-shadow-1);
+    background-color: var(--bg-3);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition-1);
+
+}
+.scroll-top:hover {
+   background-color: var(--bg-2 );
+}

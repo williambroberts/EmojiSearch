@@ -79,6 +79,8 @@ const EmojiPageComponent = ({emoji}) => {
           }
         setHasChanged((prev)=>prev)
     },[])
+
+  
   return (
     <div className='emoji-page-item'>
         <BackButton/>
@@ -113,7 +115,7 @@ const EmojiPageComponent = ({emoji}) => {
         <span className='emoji-modal-getcode' onClick={()=>handleGetCode()}><strong>{getCodeSnippet? "Copied, thank you":"Get Noto Code Snippet"}</strong></span>
        
     </div>
-       
+  
     </div>
   )
 }

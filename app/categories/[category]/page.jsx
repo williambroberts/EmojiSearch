@@ -10,6 +10,7 @@ import { v4 as uuidv4 } from 'uuid';
 import BackButton from '@/components/setup/buttons/backButton'
 import Title from '@/components/setup/title'
 import { recentlyViewedEmojiContext } from '@/contexts/recent'
+import IconArrowUp from '@/components/icons/action/arrow'
 const IndividualcategoryPage = ({params: {category}}) => {
   const {recentlyViewedEmojisListLength,setRecentlyViewedEmojisListLength}=useContext(recentlyViewedEmojiContext)
   const pathname = usePathname()
@@ -17,6 +18,10 @@ const IndividualcategoryPage = ({params: {category}}) => {
     
     localStorage.setItem("emojiList",JSON.stringify([]))
     setRecentlyViewedEmojisListLength(0)
+  }
+  const handleScroll = ()=>{
+    
+    window.scrollTo({top:0,behavior:"smooth"})
   }
   return (
     <main>
@@ -39,6 +44,8 @@ const IndividualcategoryPage = ({params: {category}}) => {
         {emojis.filter((item,index)=> item.category===categories[category].category).map((item,index)=> (<EmojiItem key={uuidv4()} item={item} index={index} pathname={pathname}/> ) )}
        </tbody>
       </table> */}
+         <div className="scroll-top"
+    onClick={()=>handleScroll()}><IconArrowUp/></div>
       </main>
   )
 }

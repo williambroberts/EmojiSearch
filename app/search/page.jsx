@@ -6,6 +6,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { usePathname } from 'next/navigation';
 import EmojiItem from '@/components/emojis/emojiItem';
 import FlexRow from '@/components/setup/flexRow';
+import IconArrowUp from '@/components/icons/action/arrow';
 const SearchPage = () => {
   const pathname = usePathname()
   const [searchText,SetSearchText]=useState(undefined)
@@ -110,6 +111,10 @@ const SearchPage = () => {
     setEndIndex((prev)=>val)
   }
   //console.log(results.length,searchText)
+  const handleScroll = ()=>{
+    
+    window.scrollTo({top:0,behavior:"smooth"})
+  }
   return (
     <main>
      <div className='search-header'>
@@ -151,6 +156,9 @@ const SearchPage = () => {
         .map((item,index)=>(<div key={uuidv4()}><EmojiItem  item={item} index={index} pathname={pathname}/></div> ))}
       </div>
    
+
+   <div className="scroll-top"
+    onClick={()=>handleScroll()}><IconArrowUp/></div>
     </main> 
   )
 }

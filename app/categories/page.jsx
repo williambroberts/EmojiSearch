@@ -7,10 +7,15 @@ import categories  from "../../lib/categories.json"
 import CategoriesItem from '@/components/categories/categoriesItem'
 import FlexRow from '@/components/setup/flexRow';
 import Title from '@/components/setup/title';
+import IconArrowUp from '@/components/icons/action/arrow';
 const CaterogiesPage = () => {
     const [searchInput,setSearchInput]=useState()
 
   // console.log(categories[0].category,searchInput)
+  const handleScroll = ()=>{
+    
+    window.scrollTo({top:0,behavior:"smooth"})
+  }
   return (
    <main id="categories-main">
     {/* search bar */}
@@ -27,6 +32,8 @@ const CaterogiesPage = () => {
       )
       )}
     </div>
+    <div className="scroll-top"
+    onClick={()=>handleScroll()}><IconArrowUp/></div>
    </main>
   )
 }
