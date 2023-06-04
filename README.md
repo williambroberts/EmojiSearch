@@ -1,6 +1,14 @@
+<a name="readme-top"></a>
 
+# Emoji Search
+
+## Site link 
+  [https://emoji-search-nine.vercel.app/](https://emoji-search-nine.vercel.app/)
+
+ ### Date made 🗓: 05/2023
+ 
   ## Description 👨‍💻
-  This is a fullstack emoji search website I built for searching and copying emojis into websites and projects. It uses `firebase` for the backend for a user to save their favourite emojis and `Next.js 13`, for the front end. It is fully mobile responsive and has over 4,000 emojis to choose from. It allows google noto snippets to be copied into html code. 
+  This is a **fullstack** emoji search website I built for searching and copying emojis into websites and projects. It uses `firebase` for the backend for a user to save their favourite emojis and `Next.js 13`, for the front end. It is fully mobile responsive and has over **4,000 emojis** to choose from. It allows google noto snippets to be copied into html code. It has search by name and category functions.
   
    <p align="right"><a href="#readme-top">back to top ☝🏼</a></p>
 <!-- Built with -->
