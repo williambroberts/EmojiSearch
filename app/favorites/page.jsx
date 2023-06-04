@@ -23,7 +23,7 @@ const FavoritesPage = () => {
     <h4 className={`${caveat.className} h4`}>Hello {user===null? "null" :user.email}</h4>
     {/* logged in user favorites */}
     <FavouriteEmojisComponent/>
-    <LogoutComponent/>
+    <span className='logout-wrapper'><LogoutComponent/></span>
     <Filler height={"1rem"}/> 
    </main>
   )

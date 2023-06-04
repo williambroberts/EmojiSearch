@@ -25,7 +25,7 @@ const Header = () => {
       <Link className='header-item' href={"/search"}>Search</Link>
       {user===null?"": <Link className='header-item' href={"/favorites"}>Favorites</Link> }
       <span className='header-theme'><ThemeButton/></span>
-      {user===null? <Link className='header-item' href={"/login"}>Login</Link> :<LogoutComponent/>}
+      {user===null? <Link className='header-item' href={"/login"}>Login</Link> : <span className='logout-wrapper'><LogoutComponent/></span>}
       {user===null? <Link className='header-item' href={"/signup"}>Sign up</Link>:""}
         <span className='header-menu' onClick={()=>setIsHamburger((prev)=>true)}>☰</span>
     </nav>
