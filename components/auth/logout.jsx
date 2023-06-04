@@ -12,7 +12,7 @@ const LogoutComponent = () => {
     }
 
   return (
-    <span onClick={()=>handleLogout()} className='logout-button'>logout</span>
+    <span onClick={()=>handleLogout()} className='logout-button'>Logout</span>
   )
 }
 

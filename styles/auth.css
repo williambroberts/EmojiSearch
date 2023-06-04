@@ -49,6 +49,7 @@
     background-color: var(--bg-3);
     text-align: center;
     color: var(--t-1);
+    white-space: pre-wrap;
 }
 .auth-main {
     display: grid;
@@ -151,9 +152,10 @@
 }
 
 .logout-button {
-    color: var(--blue2);
+    color:inherit;
     font-size: inherit;
     font-weight: inherit;
     text-decoration: none;
     cursor: pointer;
+    padding:0rem 0rem;
 }

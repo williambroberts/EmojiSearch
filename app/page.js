@@ -15,7 +15,9 @@ export default function Home() {
    <main>
      {/* show recent */}
      {/* show faves */}
-     <h3 className={`${caveat.className} emoji-title`}> EmojiSearch 🌮</h3>
+     <h3 className={`${caveat.className} emoji-title`}>EmojiSearch 🌮
+     {/* <span className={noto.className}> &#128373;&#127996;&zwj;&#9792;</span> */}
+     </h3>
      <Title text={"1,000s of emojis all in 1 place"} margin={"1rem 0rem"}/>
      <Intro>
     Color emojis you can copy into your projects in different formats. Get the emoji as 
