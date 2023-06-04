@@ -237,7 +237,7 @@ const EmojiItem = ({item,pathname,index}) => {
         <span className='emoji-item-emoji'>{item.emoji}</span>
       </FlexRow>
       
-      <span className='emoji-item-name'>{item.name}</span>
+      {/* <span className='emoji-item-name'>{item.name}</span> */}
 
       <FlexRow>
 
@@ -257,7 +257,7 @@ const EmojiItem = ({item,pathname,index}) => {
      </dialog>
 
     <div className={`alert`} id={`alert-fav${index}`}>
-    🥗 <strong>Please sign up to favourite this emoji</strong>
+    🌮 <strong>Please sign up to favourite this emoji</strong>
        </div>
     </div>
   )
