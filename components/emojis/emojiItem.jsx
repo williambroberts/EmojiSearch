@@ -168,7 +168,7 @@ const EmojiItem = ({item,pathname,index}) => {
       
     
     const userFavRef = doc(firestore, 'favorites', user?.email);
-    
+    console.log(userFavRef)
   
    
   

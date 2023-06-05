@@ -34,8 +34,10 @@ const FavouriteEmojisComponent = () => {
         <span className='favourite-span'>You have <strong>{favourites===[]? "": favourites?.length}</strong> favourites</span>
         <FlexRow gap={"1rem"}>
             <span onClick={()=>handlePrev()} className='prev-button'>prev</span>
-           
-            <span className='favourite-span'> Showing favorites {startIndex}:{endIndex}</span>
+           {favourites?.length>0? 
+            <span className='favourite-span'> Showing favorites {startIndex+1}:{endIndex}</span>:
+            <span className='favourite-span'> Showing <strong>0</strong> favorites </span>
+            }
             <span onClick={()=>handleNext()} className='next-button'>next</span>
         </FlexRow>
     <div className='category-grid'>

@@ -11,7 +11,7 @@ const FavoritesPage = () => {
   const {user,setUser}=useContext(IsAUserLoggedInContext)
   const router=useRouter()
   useEffect(()=>{
-    console.log("user",user)
+   // console.log("user",user)
     if (user===null){
       router.push("/")
       return
@@ -23,7 +23,7 @@ const FavoritesPage = () => {
     <h4 className={`${caveat.className} h4`}>Hello {user===null? "null" :user.email}</h4>
     {/* logged in user favorites */}
     <FavouriteEmojisComponent/>
-    <span className='logout-wrapper'><LogoutComponent/></span>
+    {/* <span className='logout-wrapper'><LogoutComponent/></span> */}
     <Filler height={"1rem"}/> 
    </main>
   )

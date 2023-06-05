@@ -2,8 +2,8 @@
 import React, { createContext, useEffect,useState } from 'react'
 import { doc,onSnapshot } from 'firebase/firestore';
 import {
-    onAuthStateChanged,
-    getAuth,   
+    onAuthStateChanged,signInWithPopup,
+    getAuth,   GoogleAuthProvider
 } from 'firebase/auth';
 import firebase_app, {firestore} from '@/firebase/config';
 export const IsAUserLoggedInContext = createContext()
@@ -12,6 +12,7 @@ const IsAUserLoggedInProvider = ({children}) => {
     const [user,setUser]=useState(null)
     const [isLoading,setisLoading]=useState(true)
     const [usersFavs,setUsersFavs]=useState()
+    const auth = getAuth(firebase_app)
     useEffect(()=>{
         const isUser = onAuthStateChanged(auth, (person)=>{
             if (person){
@@ -26,6 +27,20 @@ const IsAUserLoggedInProvider = ({children}) => {
          //isUser()
          return ()=> isUser()
     },[])
+
+    const googleSignIn = async ()=>{
+
+        let provider = new GoogleAuthProvider()
+        let result = null
+        let error = null
+        try {
+           result = await signInWithPopup(auth,provider)
+        }catch (err){
+            error=err
+
+        }
+        return {result,error}
+    }
 
     useEffect(()=>{
         if (user!==null){
@@ -44,7 +59,7 @@ const IsAUserLoggedInProvider = ({children}) => {
 
 
   return (
-   <IsAUserLoggedInContext.Provider value={{user,setUser,usersFavs}}>
+   <IsAUserLoggedInContext.Provider value={{user,setUser,usersFavs,googleSignIn}}>
         {isLoading? <span>Loading...</span>: children }
    </IsAUserLoggedInContext.Provider>
   )
