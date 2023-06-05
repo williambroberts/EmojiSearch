@@ -257,7 +257,7 @@ const EmojiItem = ({item,pathname,index}) => {
      </dialog>
 
     <div className={`alert`} id={`alert-fav${index}`}>
-    🌮 <strong>Please sign up to favourite this emoji</strong>
+     <strong>🌮 Please sign up to favourite this emoji</strong>
        </div>
     </div>
   )
